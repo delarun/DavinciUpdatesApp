@@ -1,0 +1,32 @@
+{
+    "roms": {
+        "0": {
+            "author": "Daniel",
+            "rom_name": "ArrowOS",
+            "rom_image": "https://cdn4.telesco.pe/file/Dj9g2dRPVKeg_4F0xw8LCNngUZh1TJU-zvWyvA4suzxsgwR1cW4gSmjftsBkJdAmOKYFvxRFCA8wuk9RfBwxUG5WcnJV5p05eKiYSol0uBH-eMlJLDI_1-nNrWaT22eX4sogvP2LrF6LQtCc8KFoDZyKdNI-a6Qh2Rig0Ezswg8EO0E8HmLuh85zaP-GheLagAB38Gf_Igc8M6shHFw_cv3flwRzJnVIwrkMpbW8LLvqLKycPIX-fkj9kBBgCnybEI9JeODy7Eljd3jwjW6lxOlbaaisXQNHwcWBgEfcc-b6DEdMgeBWrDE-jd-uZXH0DhE9fBHIwZIEvVO2s6wn1g.jpg",
+            "android_version": "11.0",
+            "build_date": "2021-01-07",
+            "rom_version": "-",
+            "rom_codename": "-",
+            "changelog_link": "https://arrowos.net/changelog.php",
+            "official": true,
+            "download_link": "http://downloads.arrowos.net/davinci",
+            "tg_author": "https://t.me/@daniml3",
+            "tg_group": "https://t.me/arrowdavinci"
+        },
+        "1": {
+            "author": "Zadli",
+            "rom_name": "Fluid",
+            "rom_image": "https://cdn4.telesco.pe/file/iQpGy2Kmn8qS3_E1TP-qCki6iEK9arz9x6KV1bVh2DdRcAR71cvrC38iRsjhLBZWuXXPXyXI8Rs5adatBLukWEA_AErkIjnlA5Avq92ZejFF-cPiy3gMses-GH6n83nlDAmJclNlY1Y9nm4Y0np9usawZ3oOTVlQDCRgrq5NFACeDRcLHo7tAOIaM-J8AJFdKjWvc9wE6DM-lgqRHCC8JDr8_zKRN2zfdZDpAFEz-sA7xJzViPPA7I7GdjdDb2nBpHd7jWQHStWav6hYoB-jYYnup6YNXkRnZ9EFTzU87f4Q69mFXYw3oMaZlLKv-OKlEfdqp6EN6jphtmr8KkVW4Q.jpg",
+            "android_version": "11.0",
+            "build_date": "2021-01-07",
+            "rom_version": "1.1",
+            "rom_codename": "Rum",
+            "changelog_link": "https://t.me/Zadli_Building_Hub/7760",
+            "official": true,
+            "download_link": "https://sourceforge.net/projects/project-fluid/files/davinci/eleven/gapped/Fluid-1.1-Rum-OFFICIAL-davinci-20210107-gapped.zip/download",
+            "tg_author": "https://t.me/@ZadliM",
+            "tg_group": "https://t.me/fluid_davinci"
+        }
+    }
+}
