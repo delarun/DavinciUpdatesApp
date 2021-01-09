@@ -1,4 +1,4 @@
-package me.zadli.davinciupdatesapp.fragments;
+package me.zadli.davinciupdatesapp.fragments.bottom_sheets;
 
 import android.app.Dialog;
 import android.content.Intent;

@@ -18,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import me.zadli.davinciupdatesapp.R;
-import me.zadli.davinciupdatesapp.fragments.BottomSheetDialogFragment_MainRoms;
+import me.zadli.davinciupdatesapp.fragments.bottom_sheets.BottomSheetDialogFragment_MainRoms;
 
 public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerViewAdapter_MainRoms.ViewHolder> {
 

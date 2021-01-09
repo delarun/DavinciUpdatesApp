@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_roms"
+        android:icon="@drawable/ic_roms"
+        android:title="Roms" />
+    <item
+        android:id="@+id/action_mods"
+        android:icon="@drawable/ic_mods"
+        android:title="Mods" />
+    <item
+        android:id="@+id/action_additionally"
+        android:icon="@drawable/ic_additionally"
+        android:title="Additionally" />
+</menu>
