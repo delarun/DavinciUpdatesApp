@@ -98,6 +98,11 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                         send_data.putString("rom_image", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("rom_image"));
                         send_data.putString("changelog_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("changelog_link"));
                         send_data.putString("download_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"));
+                        send_data.putString("download_vanilla_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("download_vanilla_link"));
+                        send_data.putString("mirror_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_link"));
+                        send_data.putString("mirror_vanilla_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_vanilla_link"));
+                        send_data.putString("donate_paypal_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_paypal_link"));
+                        send_data.putString("donate_buymeacoffee_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_buymeacoffee_link"));
                         send_data.putString("tg_author", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_author"));
                         send_data.putString("tg_group", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_group"));
 

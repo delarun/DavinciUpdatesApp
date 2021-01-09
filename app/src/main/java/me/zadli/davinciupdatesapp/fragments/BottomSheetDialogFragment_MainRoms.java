@@ -25,6 +25,11 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
         ImageView fragment_main_roms_bottom_sheet_rom_image = view.findViewById(R.id.fragment_main_roms_bottom_sheet_rom_image);
         Button fragment_main_roms_bottom_sheet_changelog_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_changelog_link);
         Button fragment_main_roms_bottom_sheet_download_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_download_link);
+        Button fragment_main_roms_bottom_sheet_download_vanilla_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_download_vanilla_link);
+        Button fragment_main_roms_bottom_sheet_mirror_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_mirror_link);
+        Button fragment_main_roms_bottom_sheet_mirror_vanilla_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_mirror_vanilla_link);
+        Button fragment_main_roms_bottom_sheet_donate_paypal_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_donate_paypal_link);
+        Button fragment_main_roms_bottom_sheet_donate_buymeacoffee_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_donate_buymeacoffee_link);
         Button fragment_main_roms_bottom_sheet_tg_author = view.findViewById(R.id.fragment_main_roms_bottom_sheet_tg_author);
         Button fragment_main_roms_bottom_sheet_tg_group = view.findViewById(R.id.fragment_main_roms_bottom_sheet_tg_group);
 
@@ -39,14 +44,6 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
             public void onClick(View v) {
                 Intent open_browser = new Intent(Intent.ACTION_VIEW);
                 open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("changelog_link")));
-                startActivity(open_browser);
-            }
-        });
-        fragment_main_roms_bottom_sheet_download_link.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("download_link")));
                 startActivity(open_browser);
             }
         });
@@ -66,6 +63,79 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 startActivity(open_browser);
             }
         });
+        if (getArguments().getString("download_link").equals("-")){
+            fragment_main_roms_bottom_sheet_download_link.setVisibility(View.GONE);
+        }else{
+            fragment_main_roms_bottom_sheet_download_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("download_link")));
+                    startActivity(open_browser);
+                }
+            });
+        }
+        if (getArguments().getString("download_vanilla_link").equals("-")){
+            fragment_main_roms_bottom_sheet_download_vanilla_link.setVisibility(View.GONE);
+        }else{
+            fragment_main_roms_bottom_sheet_download_vanilla_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("download_vanilla_link")));
+                    startActivity(open_browser);
+                }
+            });
+        }
+        if (getArguments().getString("mirror_link").equals("-")){
+            fragment_main_roms_bottom_sheet_mirror_link.setVisibility(View.GONE);
+        }else{
+            fragment_main_roms_bottom_sheet_mirror_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("mirror_link")));
+                    startActivity(open_browser);
+                }
+            });
+        }
+        if (getArguments().getString("mirror_vanilla_link").equals("-")){
+            fragment_main_roms_bottom_sheet_mirror_vanilla_link.setVisibility(View.GONE);
+        }else{
+            fragment_main_roms_bottom_sheet_mirror_vanilla_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("mirror_vanilla_link")));
+                    startActivity(open_browser);
+                }
+            });
+        }
+        if (getArguments().getString("donate_paypal_link").equals("-")){
+            fragment_main_roms_bottom_sheet_donate_paypal_link.setVisibility(View.GONE);
+        }else{
+            fragment_main_roms_bottom_sheet_donate_paypal_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("donate_paypal_link")));
+                    startActivity(open_browser);
+                }
+            });
+        }
+        if (getArguments().getString("donate_buymeacoffee_link").equals("-")){
+            fragment_main_roms_bottom_sheet_donate_buymeacoffee_link.setVisibility(View.GONE);
+        }else{
+            fragment_main_roms_bottom_sheet_donate_buymeacoffee_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("donate_buymeacoffee_link")));
+                    startActivity(open_browser);
+                }
+            });
+        }
+
         return view;
     }
 }
