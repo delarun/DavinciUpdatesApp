@@ -1,6 +1,10 @@
 package me.zadli.davinciupdatesapp.fragments;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.squareup.picasso.Picasso;
@@ -32,6 +40,13 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
         Button fragment_main_roms_bottom_sheet_donate_buymeacoffee_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_donate_buymeacoffee_link);
         Button fragment_main_roms_bottom_sheet_tg_author = view.findViewById(R.id.fragment_main_roms_bottom_sheet_tg_author);
         Button fragment_main_roms_bottom_sheet_tg_group = view.findViewById(R.id.fragment_main_roms_bottom_sheet_tg_group);
+        ConstraintLayout fragment_main_roms_bottom_sheet_constraint_background = view.findViewById(R.id.fragment_main_roms_bottom_sheet_constraint_background);
+
+        if((requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
+            fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.background_night));
+        }else{
+            fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.white));
+        }
 
         Picasso.with(requireContext())
                 .load(Objects.requireNonNull(getArguments()).getString("rom_image"))
@@ -137,5 +152,12 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
         }
 
         return view;
+    }
+
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.MyBottomSheetDialogTheme);
+        return super.onCreateDialog(savedInstanceState);
     }
 }

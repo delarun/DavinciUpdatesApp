@@ -1,6 +1,7 @@
 package me.zadli.davinciupdatesapp.adapters;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,12 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(View.inflate(parent.getContext(), R.layout.rv_main_roms, null));
+        View view = View.inflate(parent.getContext(), R.layout.rv_main_roms, null);
+        View background = view.findViewById(R.id.rv_main_roms_background);
+        if((context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES){
+            background.setBackgroundColor(context.getResources().getColor(R.color.background_night));
+        }
+        return new ViewHolder(view);
     }
 
     @Override

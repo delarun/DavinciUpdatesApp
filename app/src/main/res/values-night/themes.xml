@@ -12,7 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">#121212</item>
         <item name="android:navigationBarColor">#121212</item>
-
         <!-- Customize your theme here. -->
+        <item name="android:windowBackground">#000000</item>
     </style>
 </resources>

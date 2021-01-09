@@ -7,12 +7,13 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#2d2d2d"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +23,10 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <View
+                android:id="@+id/rv_main_roms_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
             <ImageView
                 android:id="@+id/rv_main_roms_rom_image"
