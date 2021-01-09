@@ -11,6 +11,11 @@
             "changelog_link": "https://arrowos.net/changelog.php",
             "official": true,
             "download_link": "http://downloads.arrowos.net/davinci",
+            "download_vanilla_link": "-",
+            "mirror_link": "-",
+            "mirror_vanilla_link": "-",
+            "donate_paypal_link": "http://paypal.me/danielml",
+            "donate_buymeacoffee_link": "https://www.buymeacoffee.com/danielml3",
             "tg_author": "https://t.me/@daniml3",
             "tg_group": "https://t.me/arrowdavinci"
         },
@@ -25,6 +30,11 @@
             "changelog_link": "https://t.me/Zadli_Building_Hub/7760",
             "official": true,
             "download_link": "https://sourceforge.net/projects/project-fluid/files/davinci/eleven/gapped/Fluid-1.1-Rum-OFFICIAL-davinci-20210107-gapped.zip/download",
+            "download_vanilla_link": "-",
+            "mirror_link": "https://drive.google.com/file/d/1f9S5POSEiSv1KOUAIPlFjlqzUKHntcWi/view?usp=sharing",
+            "mirror_vanilla_link": "-",
+            "donate_paypal_link": "-",
+            "donate_buymeacoffee_link": "-",
             "tg_author": "https://t.me/@ZadliM",
             "tg_group": "https://t.me/fluid_davinci"
         }
