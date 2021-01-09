@@ -57,7 +57,7 @@
             "tg_author": "https://t.me/maade69",
             "tg_group": "https://t.me/p404davinci"
         },
-        "3" : {
+        "3": {
             "author": "ArixElo",
             "rom_name": "ShapeShiftOS",
             "rom_image": "https://telegra.ph/file/832dc0e909848520af7ac.png",
@@ -76,7 +76,7 @@
             "tg_author": "https://t.me/ArixElo",
             "tg_group": "https://t.me/arixelogroup"
         },
-       	"4" : {
+       	"4": {
             "author": "Marco",
             "rom_name": "AOSP Extended",
             "rom_image": "https://telegra.ph/file/4a7f391046a753cf31b0b.png",
@@ -94,6 +94,25 @@
             "donate_buymeacoffee_link": "https://buymeacoffee.com/hack64",
             "tg_author": "https://t.me/Marco03",
             "tg_group": "https://t.me/dotosdavinci"
+        },
+       	"5": {
+            "author": "spkal01",
+            "rom_name": "Aicp",
+            "rom_image": "https://telegra.ph/file/2fb64dac319d081f289aa.jpg",
+            "android_version": "11.0",
+            "build_date": "2021-01-08",
+            "rom_version": "-",
+            "rom_codename": "-",
+            "changelog_link": "http://files.spkal01.tech/Aicp/latest/Changelog.txt",
+            "official": false,
+            "download_link": "http://files.spkal01.tech/Aicp/latest",
+            "download_vanilla_link": "http://files.spkal01.tech/Aicp/latest",
+            "mirror_link": "-",
+            "mirror_vanilla_link": "-",
+            "donate_paypal_link": "https://paypal.me/spkal01",
+            "donate_buymeacoffee_link": "https://buymeacoffee.com/spkal01",
+            "tg_author": "https://t.me/spkal",
+            "tg_group": "https://t.me/spkal01hub"
         }
     }
 }
