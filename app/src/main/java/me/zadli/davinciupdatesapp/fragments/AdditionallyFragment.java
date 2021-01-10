@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,6 +51,7 @@ public class AdditionallyFragment extends Fragment {
                                     additionally.length()
                             );
                             main_additionally_rv.setAdapter(adapter_mainAdditionally);
+                            main_additionally_rv.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.anim_alpha));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

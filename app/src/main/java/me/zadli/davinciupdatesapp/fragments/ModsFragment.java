@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ public class ModsFragment extends Fragment {
         main_mods_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         RecyclerViewAdapter_MainMods adapter_mainMods = new RecyclerViewAdapter_MainMods();
         main_mods_rv.setAdapter(adapter_mainMods);
+        main_mods_rv.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.anim_alpha));
 
         return view;
     }

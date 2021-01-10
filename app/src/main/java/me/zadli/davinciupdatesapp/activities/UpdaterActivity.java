@@ -1,6 +1,7 @@
 package me.zadli.davinciupdatesapp.activities;
 
 import android.os.Bundle;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,6 +47,7 @@ public class UpdaterActivity extends AppCompatActivity {
                                 response,
                                 response.length());
                         updater_rv.setAdapter(adapter_updater);
+                        updater_rv.startAnimation(AnimationUtils.loadAnimation(UpdaterActivity.this, R.anim.anim_alpha));
                     }
                 },
                 new Response.ErrorListener() {

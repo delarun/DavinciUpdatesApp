@@ -16,7 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,19 +41,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit(); //Load Default Fragment
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView_main);
+        ChipNavigationBar chipNavigationBar = findViewById(R.id.сhipNavigationBar_main);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit(); //Load Default Fragment
+        chipNavigationBar.setItemSelected(R.id.action_roms,true);
 
         if ((getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.background_night)); //Set specific color in night mode
+            chipNavigationBar.setBackgroundColor(getResources().getColor(R.color.background_night)); //Set specific color in night mode
         }
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
+        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
+            public void onItemSelected(int i) {
+                switch (i){
                     case R.id.action_roms:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit();
                         break;
@@ -67,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new KernelsFragment()).commit();
                         break;
                 }
-                return true;
             }
         });
+
 
         checkUpdate();
     }
