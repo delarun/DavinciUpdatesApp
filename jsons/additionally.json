@@ -1,7 +1,7 @@
 {
     "additionally": {
         "0": {
-            "additionally_name": "Disable Dm-Verity ForceEncrypt",
+            "additionally_name": "Disable ForceEncrypt",
             "additionally_version": "-",
             "additionally_image": "-",
             "upload_date": "2020-02-11",
