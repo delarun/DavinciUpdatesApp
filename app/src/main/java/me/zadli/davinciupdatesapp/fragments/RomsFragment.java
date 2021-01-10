@@ -29,9 +29,10 @@ public class RomsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_roms, container, false);
+
         RecyclerView main_roms_rv = view.findViewById(R.id.main_roms_rv);
+
         main_roms_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         Volley.newRequestQueue(Objects.requireNonNull(getActivity())).add(new JsonObjectRequest(GET,
@@ -44,7 +45,7 @@ public class RomsFragment extends Fragment {
                             JSONObject roms = response.getJSONObject("roms");
                             RecyclerViewAdapter_MainRoms adapter_mainRoms = new RecyclerViewAdapter_MainRoms(
                                     getActivity(),
-                                    response,
+                                    roms,
                                     roms.length());
                             main_roms_rv.setAdapter(adapter_mainRoms);
                         } catch (JSONException e) {
@@ -57,7 +58,9 @@ public class RomsFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
 
                     }
-                }));
+                }
+            )
+        );
 
         return view;
     }

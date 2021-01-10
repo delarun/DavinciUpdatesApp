@@ -23,12 +23,12 @@ import me.zadli.davinciupdatesapp.R;
 public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<RecyclerViewAdapter_MainAdditionally.ViewHolder> {
 
     Context context;
-    JSONObject response;
+    JSONObject additionally;
     int count;
 
-    public RecyclerViewAdapter_MainAdditionally(Context context, JSONObject response, int count) {
+    public RecyclerViewAdapter_MainAdditionally(Context context, JSONObject additionally, int count) {
         this.context = context;
-        this.response = response;
+        this.additionally = additionally;
         this.count = count;
     }
 
@@ -47,13 +47,13 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         try {
             Picasso.with(context)
-                    .load(response.getJSONObject(String.valueOf(position)).getString("additionally_image"))
+                    .load(additionally.getJSONObject(String.valueOf(position)).getString("additionally_image"))
                     .resize(1368, 1024)
                     .centerInside()
                     .into(holder.rv_main_additionally_image);
-            holder.rv_main_additionally_name.setText(response.getJSONObject(String.valueOf(position)).getString("additionally_name"));
-            holder.rv_main_additionally_version.setText(response.getJSONObject(String.valueOf(position)).getString("additionally_version"));
-            holder.rv_main_additionally_build_date.setText(response.getJSONObject(String.valueOf(position)).getString("upload_date"));
+            holder.rv_main_additionally_name.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_name"));
+            holder.rv_main_additionally_version.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_version"));
+            holder.rv_main_additionally_build_date.setText(additionally.getJSONObject(String.valueOf(position)).getString("upload_date"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -73,6 +73,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             rv_main_additionally_name = itemView.findViewById(R.id.rv_main_additionally_name);
             rv_main_additionally_build_date = itemView.findViewById(R.id.rv_main_additionally_build_date);
             rv_main_additionally_version = itemView.findViewById(R.id.rv_main_additionally_version);
@@ -83,7 +84,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                 @Override
                 public void onClick(View v) {
                     try {
-                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

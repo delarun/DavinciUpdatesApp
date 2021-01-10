@@ -18,8 +18,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.Objects;
 
@@ -29,7 +27,7 @@ public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragm
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable  ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_updater_info_bottom_sheet, container, false);
 
@@ -39,11 +37,12 @@ public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragm
         TextView fragment_updater_info_bottom_sheet_date = view.findViewById(R.id.fragment_updater_info_bottom_sheet_date);
         Button fragment_updater_info_bottom_sheet_open_page_button = view.findViewById(R.id.fragment_updater_info_bottom_sheet_open_page_button);
 
-        if((requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
+        if ((requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
             fragment_updater_info_bottom_sheet_background.setBackgroundColor(requireContext().getResources().getColor(R.color.background_night));
-        }else{
+        } else {
             fragment_updater_info_bottom_sheet_background.setBackgroundColor(requireContext().getResources().getColor(R.color.white));
         }
+
         try {
             JSONArray response = new JSONArray(Objects.requireNonNull(getArguments()).getString("JSONArray"));
             fragment_updater_info_bottom_sheet_name.setText(response.getJSONObject(0).getString("name"));
@@ -62,6 +61,7 @@ public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragm
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         return view;
     }
 

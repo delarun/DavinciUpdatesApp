@@ -3,8 +3,6 @@ package me.zadli.davinciupdatesapp.fragments.bottom_sheets;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,8 +26,8 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_main_roms_bottom_sheet, container, false);
+
         ImageView fragment_main_roms_bottom_sheet_rom_image = view.findViewById(R.id.fragment_main_roms_bottom_sheet_rom_image);
         Button fragment_main_roms_bottom_sheet_changelog_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_changelog_link);
         Button fragment_main_roms_bottom_sheet_download_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_download_link);
@@ -42,9 +40,9 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
         Button fragment_main_roms_bottom_sheet_tg_group = view.findViewById(R.id.fragment_main_roms_bottom_sheet_tg_group);
         ConstraintLayout fragment_main_roms_bottom_sheet_constraint_background = view.findViewById(R.id.fragment_main_roms_bottom_sheet_constraint_background);
 
-        if((requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
+        if ((requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
             fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.background_night));
-        }else{
+        } else {
             fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.white));
         }
 
@@ -62,6 +60,7 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 startActivity(open_browser);
             }
         });
+
         fragment_main_roms_bottom_sheet_tg_author.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +69,7 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 startActivity(open_browser);
             }
         });
+
         fragment_main_roms_bottom_sheet_tg_group.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,9 +78,10 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 startActivity(open_browser);
             }
         });
-        if (getArguments().getString("download_link").equals("-")){
+
+        if (getArguments().getString("download_link").equals("-")) {
             fragment_main_roms_bottom_sheet_download_link.setVisibility(View.GONE);
-        }else{
+        } else {
             fragment_main_roms_bottom_sheet_download_link.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -90,9 +91,10 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 }
             });
         }
-        if (getArguments().getString("download_vanilla_link").equals("-")){
+
+        if (getArguments().getString("download_vanilla_link").equals("-")) {
             fragment_main_roms_bottom_sheet_download_vanilla_link.setVisibility(View.GONE);
-        }else{
+        } else {
             fragment_main_roms_bottom_sheet_download_vanilla_link.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -102,9 +104,10 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 }
             });
         }
-        if (getArguments().getString("mirror_link").equals("-")){
+
+        if (getArguments().getString("mirror_link").equals("-")) {
             fragment_main_roms_bottom_sheet_mirror_link.setVisibility(View.GONE);
-        }else{
+        } else {
             fragment_main_roms_bottom_sheet_mirror_link.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -114,9 +117,10 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 }
             });
         }
-        if (getArguments().getString("mirror_vanilla_link").equals("-")){
+
+        if (getArguments().getString("mirror_vanilla_link").equals("-")) {
             fragment_main_roms_bottom_sheet_mirror_vanilla_link.setVisibility(View.GONE);
-        }else{
+        } else {
             fragment_main_roms_bottom_sheet_mirror_vanilla_link.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -126,9 +130,10 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 }
             });
         }
-        if (getArguments().getString("donate_paypal_link").equals("-")){
+
+        if (getArguments().getString("donate_paypal_link").equals("-")) {
             fragment_main_roms_bottom_sheet_donate_paypal_link.setVisibility(View.GONE);
-        }else{
+        } else {
             fragment_main_roms_bottom_sheet_donate_paypal_link.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -138,9 +143,10 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 }
             });
         }
-        if (getArguments().getString("donate_buymeacoffee_link").equals("-")){
+
+        if (getArguments().getString("donate_buymeacoffee_link").equals("-")) {
             fragment_main_roms_bottom_sheet_donate_buymeacoffee_link.setVisibility(View.GONE);
-        }else{
+        } else {
             fragment_main_roms_bottom_sheet_donate_buymeacoffee_link.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

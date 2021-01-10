@@ -1,14 +1,13 @@
 package me.zadli.davinciupdatesapp.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -22,8 +21,6 @@ import java.util.Objects;
 
 import me.zadli.davinciupdatesapp.R;
 import me.zadli.davinciupdatesapp.adapters.RecyclerViewAdapter_MainKernels;
-import me.zadli.davinciupdatesapp.adapters.RecyclerViewAdapter_MainMods;
-import me.zadli.davinciupdatesapp.adapters.RecyclerViewAdapter_MainRoms;
 
 import static com.android.volley.Request.Method.GET;
 
@@ -32,12 +29,14 @@ public class KernelsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_kernels, container, false);
 
         RecyclerView main_kernels_rv = view.findViewById(R.id.main_kernels_rv);
+
         main_kernels_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-        Volley.newRequestQueue(Objects.requireNonNull(getActivity())).add(new JsonObjectRequest(GET,
+
+        Volley.newRequestQueue(Objects.requireNonNull(getActivity())).add(new JsonObjectRequest(
+                GET,
                 "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/kernels.json",
                 null,
                 new Response.Listener<JSONObject>() {
@@ -61,7 +60,9 @@ public class KernelsFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
 
                     }
-                }));
+                }
+            )
+        );
 
         return view;
     }

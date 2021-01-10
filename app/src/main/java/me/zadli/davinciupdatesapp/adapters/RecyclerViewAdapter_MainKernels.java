@@ -23,12 +23,12 @@ import me.zadli.davinciupdatesapp.R;
 public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<RecyclerViewAdapter_MainKernels.ViewHolder> {
 
     Context context;
-    JSONObject response;
+    JSONObject kernels;
     int count;
 
-    public RecyclerViewAdapter_MainKernels(Context context, JSONObject response, int count) {
+    public RecyclerViewAdapter_MainKernels(Context context, JSONObject kernels, int count) {
         this.context = context;
-        this.response = response;
+        this.kernels = kernels;
         this.count = count;
     }
 
@@ -47,15 +47,15 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
     public void onBindViewHolder(@NonNull RecyclerViewAdapter_MainKernels.ViewHolder holder, int position) {
         try {
             Picasso.with(context)
-                    .load(response.getJSONObject(String.valueOf(position)).getString("kernel_image"))
+                    .load(kernels.getJSONObject(String.valueOf(position)).getString("kernel_image"))
                     .resize(1368, 1024)
                     .centerInside()
                     .into(holder.rv_main_kernels_image);
-            holder.rv_main_kernels_author.setText(response.getJSONObject(String.valueOf(position)).getString("kernel_author"));
-            holder.rv_main_kernels_name.setText(response.getJSONObject(String.valueOf(position)).getString("kernel_name"));
-            holder.rv_main_kernels_version.setText(response.getJSONObject(String.valueOf(position)).getString("kernel_version"));
-            holder.rv_main_kernels_kernel_kernel_version.setText(response.getJSONObject(String.valueOf(position)).getString("kernel_kernel_version"));
-            holder.rv_main_kernels_build_date.setText(response.getJSONObject(String.valueOf(position)).getString("build_date"));
+            holder.rv_main_kernels_author.setText(kernels.getJSONObject(String.valueOf(position)).getString("kernel_author"));
+            holder.rv_main_kernels_name.setText(kernels.getJSONObject(String.valueOf(position)).getString("kernel_name"));
+            holder.rv_main_kernels_version.setText(kernels.getJSONObject(String.valueOf(position)).getString("kernel_version"));
+            holder.rv_main_kernels_kernel_kernel_version.setText(kernels.getJSONObject(String.valueOf(position)).getString("kernel_kernel_version"));
+            holder.rv_main_kernels_build_date.setText(kernels.getJSONObject(String.valueOf(position)).getString("build_date"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -92,7 +92,7 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
                 @Override
                 public void onClick(View v) {
                     try {
-                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -103,7 +103,7 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
                 @Override
                 public void onClick(View v) {
                     try {
-                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.getJSONObject(String.valueOf(getAdapterPosition())).getString("kernel_changelog_link"))));
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("kernel_changelog_link"))));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

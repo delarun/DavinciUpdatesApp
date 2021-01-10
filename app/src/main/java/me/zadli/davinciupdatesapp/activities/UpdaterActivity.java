@@ -11,11 +11,9 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +34,8 @@ public class UpdaterActivity extends AppCompatActivity {
         RecyclerView updater_rv = findViewById(R.id.updater_rv);
         updater_rv.setLayoutManager(new LinearLayoutManager(this));
 
-        Volley.newRequestQueue(this).add(new JsonArrayRequest(GET,
+        Volley.newRequestQueue(this).add(new JsonArrayRequest(
+                GET,
                 "https://api.github.com/repos/zadli/DavinciUpdatesApp/releases",
                 null,
                 new Response.Listener<JSONArray>() {
@@ -52,15 +51,15 @@ public class UpdaterActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(UpdaterActivity.this, String.valueOf(error),Toast.LENGTH_LONG).show();
+                        Toast.makeText(UpdaterActivity.this, String.valueOf(error), Toast.LENGTH_LONG).show();
                     }
                 }) {
-                    @Override
-                    public Map<String, String> getHeaders() throws AuthFailureError {
-                        Map<String, String> params = new HashMap<String, String>();
-                        params.put("Accept: ","application/vnd.github.v3+json");
-                    return params;
-                    }
-                });
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Accept: ", "application/vnd.github.v3+json");
+                return params;
+            }
+        });
     }
 }

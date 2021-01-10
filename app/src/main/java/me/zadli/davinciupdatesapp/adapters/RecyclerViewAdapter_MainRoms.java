@@ -23,12 +23,12 @@ import me.zadli.davinciupdatesapp.fragments.bottom_sheets.BottomSheetDialogFragm
 public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerViewAdapter_MainRoms.ViewHolder> {
 
     Context context;
-    JSONObject response;
+    JSONObject roms;
     int count;
 
-    public RecyclerViewAdapter_MainRoms(Context context, JSONObject response, int count) {
+    public RecyclerViewAdapter_MainRoms(Context context, JSONObject roms, int count) {
         this.context = context;
-        this.response = response;
+        this.roms = roms;
         this.count = count;
     }
 
@@ -37,7 +37,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_main_roms, null);
         View background = view.findViewById(R.id.rv_main_roms_background);
-        if((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES){
+        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
             background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night));
         }
         return new ViewHolder(view);
@@ -47,21 +47,21 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     public void onBindViewHolder(@NonNull RecyclerViewAdapter_MainRoms.ViewHolder holder, int position) {
         try {
             Picasso.with(context)
-                    .load(response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getString("rom_image"))
+                    .load(roms.getJSONObject(String.valueOf(position)).getString("rom_image"))
                     .resize(1368, 1024)
                     .centerInside()
                     .into(holder.rv_main_roms_rom_image);
-            holder.rv_main_roms_author.setText("Author: " + response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getString("author"));
-            holder.rv_main_roms_rom_name.setText(response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getString("rom_name"));
-            if (response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getBoolean("official")) {
+            holder.rv_main_roms_author.setText("Author: " + roms.getJSONObject(String.valueOf(position)).getString("author"));
+            holder.rv_main_roms_rom_name.setText(roms.getJSONObject(String.valueOf(position)).getString("rom_name"));
+            if (roms.getJSONObject(String.valueOf(position)).getBoolean("official")) {
                 holder.rv_main_roms_official.setText("Official");
             } else {
                 holder.rv_main_roms_official.setText("Unofficial");
             }
-            holder.rv_main_roms_build_date.setText("Date: " + response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getString("build_date"));
-            holder.rv_main_roms_rom_version.setText("Version: " + response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getString("rom_version"));
-            holder.rv_main_roms_rom_codename.setText("Codename: "+ response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getString("rom_codename"));
-            holder.rv_main_roms_android_version.setText("Android: " + response.getJSONObject("roms").getJSONObject(String.valueOf(position)).getString("android_version"));
+            holder.rv_main_roms_build_date.setText("Date: " + roms.getJSONObject(String.valueOf(position)).getString("build_date"));
+            holder.rv_main_roms_rom_version.setText("Version: " + roms.getJSONObject(String.valueOf(position)).getString("rom_version"));
+            holder.rv_main_roms_rom_codename.setText("Codename: " + roms.getJSONObject(String.valueOf(position)).getString("rom_codename"));
+            holder.rv_main_roms_android_version.setText("Android: " + roms.getJSONObject(String.valueOf(position)).getString("android_version"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -74,7 +74,6 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView rv_main_roms_rom_image;
         TextView rv_main_roms_rom_name;
         TextView rv_main_roms_author;
@@ -86,6 +85,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             rv_main_roms_rom_image = itemView.findViewById(R.id.rv_main_roms_rom_image);
             rv_main_roms_rom_name = itemView.findViewById(R.id.rv_main_roms_rom_name);
             rv_main_roms_author = itemView.findViewById(R.id.rv_main_roms_author);
@@ -101,16 +101,16 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                     try {
                         Bundle send_data = new Bundle();
 
-                        send_data.putString("rom_image", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("rom_image"));
-                        send_data.putString("changelog_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("changelog_link"));
-                        send_data.putString("download_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"));
-                        send_data.putString("download_vanilla_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("download_vanilla_link"));
-                        send_data.putString("mirror_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_link"));
-                        send_data.putString("mirror_vanilla_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_vanilla_link"));
-                        send_data.putString("donate_paypal_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_paypal_link"));
-                        send_data.putString("donate_buymeacoffee_link", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_buymeacoffee_link"));
-                        send_data.putString("tg_author", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_author"));
-                        send_data.putString("tg_group", response.getJSONObject("roms").getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_group"));
+                        send_data.putString("rom_image", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("rom_image"));
+                        send_data.putString("changelog_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("changelog_link"));
+                        send_data.putString("download_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"));
+                        send_data.putString("download_vanilla_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_vanilla_link"));
+                        send_data.putString("mirror_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_link"));
+                        send_data.putString("mirror_vanilla_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_vanilla_link"));
+                        send_data.putString("donate_paypal_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_paypal_link"));
+                        send_data.putString("donate_buymeacoffee_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_buymeacoffee_link"));
+                        send_data.putString("tg_author", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_author"));
+                        send_data.putString("tg_group", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_group"));
 
                         BottomSheetDialogFragment_MainRoms bottomSheetDialogFragment_mainRoms = new BottomSheetDialogFragment_MainRoms();
                         bottomSheetDialogFragment_mainRoms.setArguments(send_data);
