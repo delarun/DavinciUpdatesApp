@@ -1,0 +1,14 @@
+{
+    "additionally": {
+        "0": {
+            "kernel_author": "Vantom",
+            "kernel_name": "Vantom Kernel",
+            "kernel_version": "VodkaRocks",
+            "kernel_image": "-",
+            "kernel_changelog_link": "https://t.me/Vantomkernel/131",
+            "kernel_kernel_version": "4.14.214-rc1",
+            "build_date": "2021-01-07",
+            "download_link": "https://t.me/Vantomkernel/131"
+        }
+    }
+}
