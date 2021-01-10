@@ -25,7 +25,7 @@
             android:layout_height="match_parent">
 
             <View
-                android:id="@+id/rv_main_roms_background"
+                android:id="@+id/rv_main_additionally_background"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/rv_main_roms_rom_image"
+                android:id="@+id/rv_main_additionally_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -45,91 +45,56 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/rv_main_roms_rom_name"
+                android:id="@+id/rv_main_additionally_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:text=""
+                android:text="Mod Name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_main_roms_rom_image" />
+                app:layout_constraintTop_toBottomOf="@+id/rv_main_additionally_image" />
 
             <TextView
-                android:id="@+id/rv_main_roms_author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:text="Author: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_main_roms_rom_name" />
-
-            <TextView
-                android:id="@+id/rv_main_roms_official"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:text="Type: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_main_roms_author" />
-
-            <TextView
-                android:id="@+id/rv_main_roms_build_date"
+                android:id="@+id/rv_main_additionally_build_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:text="Date: "
+                android:text="Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_main_roms_rom_image" />
+                app:layout_constraintTop_toBottomOf="@+id/rv_main_additionally_image" />
 
             <TextView
-                android:id="@+id/rv_main_roms_rom_version"
+                android:id="@+id/rv_main_additionally_version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:text="Version: "
+                android:layout_marginBottom="32dp"
+                android:text="Version"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_main_roms_build_date" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_main_additionally_name"
+                app:layout_constraintVertical_bias="0.50" />
 
-            <TextView
-                android:id="@+id/rv_main_roms_rom_codename"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:text="Codename: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_main_roms_rom_version" />
-
-            <TextView
-                android:id="@+id/rv_main_roms_android_version"
+            <Button
+                android:id="@+id/rv_main_additionally_download_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="32dp"
-                android:text="Android: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Download"
+                app:layout_constraintBottom_toBottomOf="@+id/rv_main_additionally_background"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_main_roms_rom_codename"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/rv_main_additionally_build_date" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

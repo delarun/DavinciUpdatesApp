@@ -36,9 +36,9 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_main_roms, null);
-        View background = view.findViewById(R.id.rv_updater_background);
-        if((context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES){
-            background.setBackgroundColor(context.getResources().getColor(R.color.background_night));
+        View background = view.findViewById(R.id.rv_main_roms_background);
+        if((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES){
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night));
         }
         return new ViewHolder(view);
     }

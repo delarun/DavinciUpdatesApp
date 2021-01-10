@@ -2,6 +2,7 @@ package me.zadli.davinciupdatesapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,12 @@ public class RecyclerViewAdapter_Updater  extends RecyclerView.Adapter<RecyclerV
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(View.inflate(parent.getContext(), R.layout.rv_updater, null));
+        View view = View.inflate(parent.getContext(), R.layout.rv_updater, null);
+        View background = view.findViewById(R.id.rv_updater_background);
+        if((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES){
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night));
+        }
+        return new ViewHolder(view);
     }
 
     @Override
