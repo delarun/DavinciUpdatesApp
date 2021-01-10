@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,8 +36,10 @@ import me.zadli.davinciupdatesapp.R;
 import me.zadli.davinciupdatesapp.adapters.RecyclerViewAdapter_MainRoms;
 import me.zadli.davinciupdatesapp.adapters.RecyclerViewAdapter_Updater;
 import me.zadli.davinciupdatesapp.fragments.AdditionallyFragment;
+import me.zadli.davinciupdatesapp.fragments.KernelsFragment;
 import me.zadli.davinciupdatesapp.fragments.ModsFragment;
 import me.zadli.davinciupdatesapp.fragments.RomsFragment;
+import me.zadli.davinciupdatesapp.fragments.bottom_sheets.BottomSheetDialogFragment_UpdateInfo;
 
 import static com.android.volley.Request.Method.GET;
 
@@ -68,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.action_additionally:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new AdditionallyFragment()).commit();
+                        break;
+                    case R.id.action_kernels:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new KernelsFragment()).commit();
                         break;
                 }
                 return true;
@@ -102,7 +108,11 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(JSONArray response) {
                         try {
                             if(!response.getJSONObject(0).getString("tag_name").equals(BuildConfig.VERSION_NAME)){
-                                Toast.makeText(MainActivity.this,"New Version Available",Toast.LENGTH_LONG).show();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("JSONArray", String.valueOf(response));
+                                BottomSheetDialogFragment_UpdateInfo bottomSheetDialogFragment_updateInfo = new BottomSheetDialogFragment_UpdateInfo();
+                                bottomSheetDialogFragment_updateInfo.setArguments(bundle);
+                                bottomSheetDialogFragment_updateInfo.show(getSupportFragmentManager(),"Updater");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

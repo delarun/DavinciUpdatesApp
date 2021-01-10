@@ -9,6 +9,10 @@
         android:icon="@drawable/ic_mods"
         android:title="Mods" />
     <item
+        android:id="@+id/action_kernels"
+        android:icon="@drawable/ic_kernels"
+        android:title="Kernels" />
+    <item
         android:id="@+id/action_additionally"
         android:icon="@drawable/ic_additionally"
         android:title="Additionally" />
