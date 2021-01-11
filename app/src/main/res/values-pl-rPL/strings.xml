@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Aktualizacje Custom ROMów"</string>
+    <string name="updater">"Aktualizator"</string>
+    <string name="roms">"ROMy"</string>
+    <string name="mods">"Modyfikacje"</string>
+    <string name="kernels">"Jądra"</string>
+    <string name="additionally">"Dodatki"</string>
+    <string name="open_page">"Otwórz stronę"</string>
+    <string name="author">"Autor"</string>
+    <string name="type">"Typ wydania"</string>
+    <string name="date">"Data wydania"</string>
+    <string name="version">"Wersja"</string>
+    <string name="codename">"Nazwa kodowa"</string>
+    <string name="android">"Wersja Androida"</string>
+    <string name="mod_name">"Nazwa modyfikacji"</string>
+    <string name="kernel_name">"Nazwa jądra"</string>
+    <string name="download">"Pobierz"</string>
+    <string name="kernel_version">"Wersja jądra"</string>
+    <string name="changelog">"Dziennik zmian"</string>
+    <string name="add_on_name">"Nazwa dodatku"</string>
+    <string name="name">"Nazwa"</string>
+    <string name="tag">"Oznaczenie"</string>
+    <string name="official">Oficjalny</string>
+    <string name="unofficial">Nieoficjalny</string>
+    <string name="new_update_available">"Nowa aktualizacja dostępna!"</string>
+    <string name="changelog_link">"Link do dziennika zmian"</string>
+    <string name="download_link_gapps">"Link do pobrania z GAppsami"</string>
+    <string name="author_s_telegram">"Telegram Autora"</string>
+    <string name="telegram_group">"Grupa na Telegramie"</string>
+    <string name="download_link_vanilla">"Link do pobrania zwykłej wersji"</string>
+    <string name="mirror_link_gapps">"Link zewnętrzny do pobrania z GAppsami"</string>
+    <string name="mirror_link_vanilla">"Link zewnętrzny do pobrania zwykłej wersji"</string>
+    <string name="donate_to_author_paypal">"Wesprzyj autora na PayPalu"</string>
+    <string name="donate_to_author_buymeacoffee">"Wesprzyj autora na BuyMeACoffee"</string>
+</resources>
