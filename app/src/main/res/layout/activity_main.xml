@@ -19,7 +19,6 @@
         android:id="@+id/сhipNavigationBar_main"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:background="@drawable/chip_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

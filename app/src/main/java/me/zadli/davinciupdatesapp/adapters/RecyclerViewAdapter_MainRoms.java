@@ -51,17 +51,17 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                     .resize(1368, 1024)
                     .centerInside()
                     .into(holder.rv_main_roms_rom_image);
-            holder.rv_main_roms_author.setText("Author: " + roms.getJSONObject(String.valueOf(position)).getString("author"));
+            holder.rv_main_roms_author.setText(context.getString(R.string.author) + ": " + roms.getJSONObject(String.valueOf(position)).getString("author"));
             holder.rv_main_roms_rom_name.setText(roms.getJSONObject(String.valueOf(position)).getString("rom_name"));
             if (roms.getJSONObject(String.valueOf(position)).getBoolean("official")) {
-                holder.rv_main_roms_official.setText("Official");
+                holder.rv_main_roms_official.setText(context.getString(R.string.official));
             } else {
-                holder.rv_main_roms_official.setText("Unofficial");
+                holder.rv_main_roms_official.setText(context.getString(R.string.unofficial));
             }
-            holder.rv_main_roms_build_date.setText("Date: " + roms.getJSONObject(String.valueOf(position)).getString("build_date"));
-            holder.rv_main_roms_rom_version.setText("Version: " + roms.getJSONObject(String.valueOf(position)).getString("rom_version"));
-            holder.rv_main_roms_rom_codename.setText("Codename: " + roms.getJSONObject(String.valueOf(position)).getString("rom_codename"));
-            holder.rv_main_roms_android_version.setText("Android: " + roms.getJSONObject(String.valueOf(position)).getString("android_version"));
+            holder.rv_main_roms_build_date.setText(roms.getJSONObject(String.valueOf(position)).getString("build_date"));
+            holder.rv_main_roms_rom_version.setText(context.getString(R.string.version)+  ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_version"));
+            holder.rv_main_roms_rom_codename.setText(context.getString(R.string.codename)+  ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_codename"));
+            holder.rv_main_roms_android_version.setText(context.getString(R.string.android)+  ": " + roms.getJSONObject(String.valueOf(position)).getString("android_version"));
         } catch (JSONException e) {
             e.printStackTrace();
         }

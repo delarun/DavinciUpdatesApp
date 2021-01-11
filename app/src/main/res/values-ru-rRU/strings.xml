@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Davinci Update Helper"</string>
+    <string name="updater">"Обновления"</string>
+    <string name="roms">"Прошивки"</string>
+    <string name="mods">"Моды"</string>
+    <string name="kernels">"Ядра"</string>
+    <string name="additionally">"Дополнительно"</string>
+    <string name="open_page">"Открыть страницу"</string>
+    <string name="author">"Автор"</string>
+    <string name="type">"Тип"</string>
+    <string name="date">"Дата"</string>
+    <string name="version">"Версия"</string>
+    <string name="codename">"Кодовое имя"</string>
+    <string name="android">"Андроид"</string>
+    <string name="mod_name">"Название мода"</string>
+    <string name="kernel_name">"Название ядра"</string>
+    <string name="download">"Скачать"</string>
+    <string name="kernel_version">"Версия ядра"</string>
+    <string name="changelog">"Список изменений"</string>
+    <string name="add_on_name">"Название дополнения"</string>
+    <string name="name">"Имя"</string>
+    <string name="tag">"Тэг"</string>
+    <string name="new_update_available">"Найдено новое обновление"</string>
+    <string name="changelog_link">"Ссылка на список изменений"</string>
+    <string name="download_link_gapps">"Ссылка на скачивание (С Гаппсами)"</string>
+    <string name="author_s_telegram">"Телеграм автора"</string>
+    <string name="telegram_group">"Группа в телеграме"</string>
+    <string name="download_link_vanilla">"Ссылка на скачивание (Без гаппсов)"</string>
+    <string name="mirror_link_gapps">"Зеркало на скачивание (С Гаппсами)"</string>
+    <string name="mirror_link_vanilla">"Зеркало на скачивание (Без Гаппсов)"</string>
+    <string name="donate_to_author_paypal">"Задонатить автору (PayPal)"</string>
+    <string name="donate_to_author_buymeacoffee">"Задонатить автору (BuyMeACoffee)"</string>
+</resources>

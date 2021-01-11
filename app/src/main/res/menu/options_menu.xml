@@ -3,5 +3,5 @@
 
     <item
         android:id="@+id/action_updater"
-        android:title="Updater" />
+        android:title="@string/updater" />
 </menu>

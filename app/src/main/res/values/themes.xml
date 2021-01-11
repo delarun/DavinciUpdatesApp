@@ -11,8 +11,6 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
-        <item name="android:navigationBarColor">?attr/colorOnPrimary</item>
-
         <!-- Customize your theme here. -->
     </style>
     <style name="MyBottomSheetDialogTheme" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">

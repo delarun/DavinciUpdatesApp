@@ -29,7 +29,7 @@ public class UpdaterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Updater");
+        setTitle(getString(R.string.updater));
         setContentView(R.layout.activity_updater);
 
         RecyclerView updater_rv = findViewById(R.id.updater_rv);
