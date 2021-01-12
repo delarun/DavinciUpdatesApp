@@ -34,9 +34,9 @@ public class RomsFragment extends Fragment {
 
         RecyclerView main_roms_rv = view.findViewById(R.id.main_roms_rv);
 
-        main_roms_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        main_roms_rv.setLayoutManager(new LinearLayoutManager(container.getContext()));
 
-        Volley.newRequestQueue(Objects.requireNonNull(getActivity())).add(new JsonObjectRequest(GET,
+        Volley.newRequestQueue(Objects.requireNonNull(container.getContext())).add(new JsonObjectRequest(GET,
                 "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/roms.json",
                 null,
                 new Response.Listener<JSONObject>() {
@@ -45,11 +45,11 @@ public class RomsFragment extends Fragment {
                         try {
                             JSONObject roms = response.getJSONObject("roms");
                             RecyclerViewAdapter_MainRoms adapter_mainRoms = new RecyclerViewAdapter_MainRoms(
-                                    getActivity(),
+                                    container.getContext(),
                                     roms,
                                     roms.length());
                             main_roms_rv.setAdapter(adapter_mainRoms);
-                            main_roms_rv.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.anim_alpha));
+                            main_roms_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

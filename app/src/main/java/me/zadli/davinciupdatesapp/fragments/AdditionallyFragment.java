@@ -34,9 +34,9 @@ public class AdditionallyFragment extends Fragment {
 
         RecyclerView main_additionally_rv = view.findViewById(R.id.main_additionally_rv);
 
-        main_additionally_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        main_additionally_rv.setLayoutManager(new LinearLayoutManager(container.getContext()));
 
-        Volley.newRequestQueue(Objects.requireNonNull(getActivity())).add(new JsonObjectRequest(
+        Volley.newRequestQueue(Objects.requireNonNull(container.getContext())).add(new JsonObjectRequest(
                 GET,
                 "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/additionally.json",
                 null,
@@ -46,12 +46,12 @@ public class AdditionallyFragment extends Fragment {
                         try {
                             JSONObject additionally = response.getJSONObject("additionally");
                             RecyclerViewAdapter_MainAdditionally adapter_mainAdditionally = new RecyclerViewAdapter_MainAdditionally(
-                                    getActivity(),
+                                    container.getContext(),
                                     additionally,
                                     additionally.length()
                             );
                             main_additionally_rv.setAdapter(adapter_mainAdditionally);
-                            main_additionally_rv.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.anim_alpha));
+                            main_additionally_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

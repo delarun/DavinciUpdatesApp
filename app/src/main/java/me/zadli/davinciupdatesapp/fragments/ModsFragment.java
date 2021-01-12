@@ -21,10 +21,10 @@ public class ModsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_mods, container, false);
 
         RecyclerView main_mods_rv = view.findViewById(R.id.main_mods_rv);
-        main_mods_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        main_mods_rv.setLayoutManager(new LinearLayoutManager(container.getContext()));
         RecyclerViewAdapter_MainMods adapter_mainMods = new RecyclerViewAdapter_MainMods();
         main_mods_rv.setAdapter(adapter_mainMods);
-        main_mods_rv.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.anim_alpha));
+        main_mods_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
 
         return view;
     }

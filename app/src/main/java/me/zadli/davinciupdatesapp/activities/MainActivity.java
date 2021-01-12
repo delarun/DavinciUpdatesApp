@@ -1,6 +1,5 @@
 package me.zadli.davinciupdatesapp.activities;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         ChipNavigationBar chipNavigationBar = findViewById(R.id.сhipNavigationBar_main);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit(); //Load Default Fragment
-        chipNavigationBar.setItemSelected(R.id.action_roms,true);
+        chipNavigationBar.setItemSelected(R.id.action_roms, true);
 
         if ((getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
             chipNavigationBar.setBackgroundColor(getResources().getColor(R.color.background_night)); //Set specific color in night mode
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int i) {
-                switch (i){
+                switch (i) {
                     case R.id.action_roms:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit();
                         break;

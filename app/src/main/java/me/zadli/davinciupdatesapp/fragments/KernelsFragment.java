@@ -34,9 +34,9 @@ public class KernelsFragment extends Fragment {
 
         RecyclerView main_kernels_rv = view.findViewById(R.id.main_kernels_rv);
 
-        main_kernels_rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        main_kernels_rv.setLayoutManager(new LinearLayoutManager(container.getContext()));
 
-        Volley.newRequestQueue(Objects.requireNonNull(getActivity())).add(new JsonObjectRequest(
+        Volley.newRequestQueue(Objects.requireNonNull(container.getContext())).add(new JsonObjectRequest(
                 GET,
                 "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/kernels.json",
                 null,
@@ -46,11 +46,11 @@ public class KernelsFragment extends Fragment {
                         try {
                             JSONObject kernels = response.getJSONObject("kernels");
                             RecyclerViewAdapter_MainKernels adapter_mainKernels = new RecyclerViewAdapter_MainKernels(
-                                    getActivity(),
+                                    container.getContext(),
                                     kernels,
                                     kernels.length());
                             main_kernels_rv.setAdapter(adapter_mainKernels);
-                            main_kernels_rv.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.anim_alpha));
+                            main_kernels_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
