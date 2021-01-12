@@ -31,7 +31,9 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     int count;
     SharedPreferences sharedPreferences;
     ArrayList<String> build_date = new ArrayList<>();
+    ArrayList<String> additionally_name = new ArrayList<>();
     int[] sortedIndicesByDate;
+    int[] sortedIndicesByName;
 
     public RecyclerViewAdapter_MainAdditionally(Context context, JSONObject additionally, int count) throws JSONException {
         this.context = context;
@@ -40,6 +42,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
         sharedPreferences = context.getSharedPreferences("APP_DATA", Context.MODE_PRIVATE);
         for (int i = 0; i < count; i++) {
             build_date.add(i, additionally.getJSONObject(String.valueOf(i)).getString("upload_date"));
+            additionally_name.add(i, additionally.getJSONObject(String.valueOf(i)).getString("additionally_name"));
         }
     }
 
@@ -62,7 +65,10 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                     setContent(holder, position);
                     break;
                 case "By Name":
-
+                    sortedIndicesByName = IntStream.range(0, count)
+                            .boxed().sorted((i, j) -> additionally_name.get(i).compareTo(additionally_name.get(j)))
+                            .mapToInt(ele -> ele).toArray();
+                    setContent(holder, sortedIndicesByName[position]);
                     break;
                 case "By Date":
                     sortedIndicesByDate = IntStream.range(0, count)
@@ -117,7 +123,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                                 context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
                                 break;
                             case "By Name":
-
+                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedIndicesByName[getAdapterPosition()])).getString("download_link"))));
                                 break;
                             case "By Date":
                                 context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedIndicesByDate[getAdapterPosition()])).getString("download_link"))));

@@ -31,7 +31,9 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     int count;
     SharedPreferences sharedPreferences;
     ArrayList<String> build_date = new ArrayList<>();
+    ArrayList<String> rom_name = new ArrayList<>();
     int[] sortedIndicesByDate;
+    int[] sortedIndicesByName;
 
     public RecyclerViewAdapter_MainRoms(Context context, JSONObject roms, int count) throws JSONException {
         this.context = context;
@@ -40,6 +42,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
         sharedPreferences = context.getSharedPreferences("APP_DATA", Context.MODE_PRIVATE);
         for (int i = 0; i < count; i++) {
             build_date.add(i, roms.getJSONObject(String.valueOf(i)).getString("build_date"));
+            rom_name.add(i, roms.getJSONObject(String.valueOf(i)).getString("rom_name"));
         }
     }
 
@@ -62,7 +65,10 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                     setContent(holder, position);
                     break;
                 case "By Name":
-
+                    sortedIndicesByName = IntStream.range(0, count)
+                            .boxed().sorted((i, j) -> rom_name.get(i).compareTo(rom_name.get(j)))
+                            .mapToInt(ele -> ele).toArray();
+                    setContent(holder, sortedIndicesByName[position]);
                     break;
                 case "By Date":
                     sortedIndicesByDate = IntStream.range(0, count)
@@ -132,7 +138,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                                 bottomSheetDialogFragment_mainRoms.setArguments(send_data(getAdapterPosition()));
                                 break;
                             case "By Name":
-
+                                bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedIndicesByName[getAdapterPosition()]));
                                 break;
                             case "By Date":
                                 bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedIndicesByDate[getAdapterPosition()]));

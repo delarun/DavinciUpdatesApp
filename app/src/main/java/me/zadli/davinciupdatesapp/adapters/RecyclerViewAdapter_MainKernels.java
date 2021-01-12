@@ -31,7 +31,9 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
     int count;
     SharedPreferences sharedPreferences;
     ArrayList<String> build_date = new ArrayList<>();
+    ArrayList<String> kernel_name = new ArrayList<>();
     int[] sortedIndicesByDate;
+    int[] sortedIndicesByName;
 
     public RecyclerViewAdapter_MainKernels(Context context, JSONObject kernels, int count) throws JSONException {
         this.context = context;
@@ -40,6 +42,8 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
         sharedPreferences = context.getSharedPreferences("APP_DATA", Context.MODE_PRIVATE);
         for (int i = 0; i < count; i++) {
             build_date.add(i, kernels.getJSONObject(String.valueOf(i)).getString("build_date"));
+            kernel_name.add(i, kernels.getJSONObject(String.valueOf(i)).getString("kernel_name"));
+
         }
     }
 
@@ -60,10 +64,12 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
             switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
                 case "By Json":
                     setContent(holder, position);
-
                     break;
                 case "By Name":
-
+                    sortedIndicesByName = IntStream.range(0, count)
+                            .boxed().sorted((i, j) -> kernel_name.get(i).compareTo(kernel_name.get(j)))
+                            .mapToInt(ele -> ele).toArray();
+                    setContent(holder, sortedIndicesByName[position]);
                     break;
                 case "By Date":
                     sortedIndicesByDate = IntStream.range(0, count)
@@ -127,7 +133,7 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
                                 context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
                                 break;
                             case "By Name":
-
+                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByName[getAdapterPosition()])).getString("download_link"))));
                                 break;
                             case "By Date":
                                 context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByDate[getAdapterPosition()])).getString("download_link"))));
@@ -148,7 +154,7 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
                                 context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("kernel_changelog_link"))));
                                 break;
                             case "By Name":
-
+                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByName[getAdapterPosition()])).getString("kernel_changelog_link"))));
                                 break;
                             case "By Date":
                                 context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByDate[getAdapterPosition()])).getString("kernel_changelog_link"))));
