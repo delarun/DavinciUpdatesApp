@@ -1,13 +1,18 @@
 package me.zadli.davinciupdatesapp.activities;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Response;
@@ -34,13 +39,15 @@ import static com.android.volley.Request.Method.GET;
 
 public class MainActivity extends AppCompatActivity {
 
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         ChipNavigationBar chipNavigationBar = findViewById(R.id.сhipNavigationBar_main);
+
+        sharedPreferences = getSharedPreferences("APP_DATA", Context.MODE_PRIVATE);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit(); //Load Default Fragment
         chipNavigationBar.setItemSelected(R.id.action_roms, true);
@@ -85,6 +92,21 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_updater:
                 startActivity(new Intent(this, UpdaterActivity.class));
+            case R.id.action_sort_method:
+                final String[] sortMethodArray = {"By Date", "By Name", "By Json"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.choose_sort_method)
+                        .setItems(sortMethodArray, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("SORT_METHOD", sortMethodArray[which]);
+                                editor.apply();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit(); //Load Default Fragment
+
+                            }
+                        });
+
+                builder.create().show();
         }
         return true;
     }

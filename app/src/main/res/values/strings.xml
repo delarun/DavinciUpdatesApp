@@ -32,4 +32,6 @@
     <string name="mirror_link_vanilla">Mirror link (Vanilla)</string>
     <string name="donate_to_author_paypal">Donate to author (PayPal)</string>
     <string name="donate_to_author_buymeacoffee">Donate to author (BuyMeACoffee)</string>
+    <string name="sort_method">Sorting Method</string>
+    <string name="choose_sort_method">Choose sorting method</string>
 </resources>
