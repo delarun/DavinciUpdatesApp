@@ -40,17 +40,18 @@ import static com.android.volley.Request.Method.GET;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
+    ChipNavigationBar chipNavigationBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ChipNavigationBar chipNavigationBar = findViewById(R.id.сhipNavigationBar_main);
+        chipNavigationBar = findViewById(R.id.сhipNavigationBar_main);
 
         sharedPreferences = getSharedPreferences("APP_DATA", Context.MODE_PRIVATE);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit(); //Load Default Fragment
         chipNavigationBar.setItemSelected(R.id.action_roms, true);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit();
 
         if ((getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
             chipNavigationBar.setBackgroundColor(getResources().getColor(R.color.background_night)); //Set specific color in night mode
@@ -76,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         checkUpdate();
     }
 
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_updater:
                 startActivity(new Intent(this, UpdaterActivity.class));
+                break;
             case R.id.action_sort_method:
                 final String[] sortMethodArray = {"By Date", "By Name", "By Json"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -101,12 +102,24 @@ public class MainActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString("SORT_METHOD", sortMethodArray[which]);
                                 editor.apply();
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit(); //Load Default Fragment
-
+                                switch (chipNavigationBar.getSelectedItemId()){
+                                    case R.id.action_roms:
+                                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RomsFragment()).commit();
+                                        break;
+                                    case R.id.action_mods:
+                                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new ModsFragment()).commit();
+                                        break;
+                                    case R.id.action_additionally:
+                                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new AdditionallyFragment()).commit();
+                                        break;
+                                    case R.id.action_kernels:
+                                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new KernelsFragment()).commit();
+                                        break;
+                                }
                             }
                         });
-
                 builder.create().show();
+                break;
         }
         return true;
     }

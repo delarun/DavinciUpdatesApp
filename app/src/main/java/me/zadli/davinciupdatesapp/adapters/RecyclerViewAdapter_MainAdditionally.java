@@ -2,6 +2,7 @@ package me.zadli.davinciupdatesapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.view.View;
@@ -18,6 +19,9 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.stream.IntStream;
+
 import me.zadli.davinciupdatesapp.R;
 
 public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<RecyclerViewAdapter_MainAdditionally.ViewHolder> {
@@ -25,11 +29,18 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     Context context;
     JSONObject additionally;
     int count;
+    SharedPreferences sharedPreferences;
+    ArrayList<String> build_date = new ArrayList<>();
+    int[] sortedIndicesByDate;
 
-    public RecyclerViewAdapter_MainAdditionally(Context context, JSONObject additionally, int count) {
+    public RecyclerViewAdapter_MainAdditionally(Context context, JSONObject additionally, int count) throws JSONException {
         this.context = context;
         this.additionally = additionally;
         this.count = count;
+        sharedPreferences = context.getSharedPreferences("APP_DATA", Context.MODE_PRIVATE);
+        for (int i = 0; i < count; i++) {
+            build_date.add(i, additionally.getJSONObject(String.valueOf(i)).getString("upload_date"));
+        }
     }
 
     @NonNull
@@ -46,17 +57,34 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         try {
-            Picasso.with(context)
-                    .load(additionally.getJSONObject(String.valueOf(position)).getString("additionally_image"))
-                    .resize(1368, 1024)
-                    .centerInside()
-                    .into(holder.rv_main_additionally_image);
-            holder.rv_main_additionally_name.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_name"));
-            holder.rv_main_additionally_version.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_version"));
-            holder.rv_main_additionally_build_date.setText(additionally.getJSONObject(String.valueOf(position)).getString("upload_date"));
+            switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
+                case "By Json":
+                    setContent(holder, position);
+                    break;
+                case "By Name":
+
+                    break;
+                case "By Date":
+                    sortedIndicesByDate = IntStream.range(0, count)
+                            .boxed().sorted((i, j) -> build_date.get(j).compareTo(build_date.get(i)))
+                            .mapToInt(ele -> ele).toArray();
+                    setContent(holder, sortedIndicesByDate[position]);
+                    break;
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setContent(@NonNull ViewHolder holder, int position) throws JSONException {
+        Picasso.with(context)
+                .load(additionally.getJSONObject(String.valueOf(position)).getString("additionally_image"))
+                .resize(1368, 1024)
+                .centerInside()
+                .into(holder.rv_main_additionally_image);
+        holder.rv_main_additionally_name.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_name"));
+        holder.rv_main_additionally_version.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_version"));
+        holder.rv_main_additionally_build_date.setText(additionally.getJSONObject(String.valueOf(position)).getString("upload_date"));
     }
 
     @Override
@@ -84,7 +112,17 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                 @Override
                 public void onClick(View v) {
                     try {
-                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                        switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
+                            case "By Json":
+                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                                break;
+                            case "By Name":
+
+                                break;
+                            case "By Date":
+                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedIndicesByDate[getAdapterPosition()])).getString("download_link"))));
+                                break;
+                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

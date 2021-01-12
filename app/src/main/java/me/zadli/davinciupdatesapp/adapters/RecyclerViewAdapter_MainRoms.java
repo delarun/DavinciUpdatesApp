@@ -4,14 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.TypedArrayUtils;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,13 +18,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
 import java.util.stream.IntStream;
 
 import me.zadli.davinciupdatesapp.R;
@@ -39,15 +31,15 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     int count;
     SharedPreferences sharedPreferences;
     ArrayList<String> build_date = new ArrayList<>();
-    int[] sortedIndices;
+    int[] sortedIndicesByDate;
 
     public RecyclerViewAdapter_MainRoms(Context context, JSONObject roms, int count) throws JSONException {
         this.context = context;
         this.roms = roms;
         this.count = count;
         sharedPreferences = context.getSharedPreferences("APP_DATA", Context.MODE_PRIVATE);
-        for (int i = 0; i < count; i++){
-            build_date.add(i,roms.getJSONObject(String.valueOf(i)).getString("build_date"));
+        for (int i = 0; i < count; i++) {
+            build_date.add(i, roms.getJSONObject(String.valueOf(i)).getString("build_date"));
         }
     }
 
@@ -65,52 +57,42 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter_MainRoms.ViewHolder holder, int position) {
         try {
-            if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
-                Picasso.with(context)
-                        .load(roms.getJSONObject(String.valueOf(position)).getString("rom_image"))
-                        .resize(1368, 1024)
-                        .centerInside()
-                        .into(holder.rv_main_roms_rom_image);
-                holder.rv_main_roms_author.setText(context.getString(R.string.author) + ": " + roms.getJSONObject(String.valueOf(position)).getString("author"));
-                holder.rv_main_roms_rom_name.setText(roms.getJSONObject(String.valueOf(position)).getString("rom_name"));
-                if (roms.getJSONObject(String.valueOf(position)).getBoolean("official")) {
-                    holder.rv_main_roms_official.setText(context.getString(R.string.official));
-                } else {
-                    holder.rv_main_roms_official.setText(context.getString(R.string.unofficial));
-                }
-                holder.rv_main_roms_build_date.setText(roms.getJSONObject(String.valueOf(position)).getString("build_date"));
-                holder.rv_main_roms_rom_version.setText(context.getString(R.string.version)+  ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_version"));
-                holder.rv_main_roms_rom_codename.setText(context.getString(R.string.codename)+  ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_codename"));
-                holder.rv_main_roms_android_version.setText(context.getString(R.string.android)+  ": " + roms.getJSONObject(String.valueOf(position)).getString("android_version"));
-            }
+            switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
+                case "By Json":
+                    setContent(holder, position);
+                    break;
+                case "By Name":
 
-            else if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Name")) {
-
-            } else if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Date")) {
-                sortedIndices = IntStream.range(0, count)
-                        .boxed().sorted((i, j) -> build_date.get(j).compareTo(build_date.get(i)))
-                        .mapToInt(ele -> ele).toArray();
-
-                Picasso.with(context)
-                        .load(roms.getJSONObject(String.valueOf(sortedIndices[position])).getString("rom_image"))
-                        .resize(1368, 1024)
-                        .centerInside()
-                        .into(holder.rv_main_roms_rom_image);
-                holder.rv_main_roms_author.setText(context.getString(R.string.author) + ": " + roms.getJSONObject(String.valueOf(sortedIndices[position])).getString("author"));
-                holder.rv_main_roms_rom_name.setText(roms.getJSONObject(String.valueOf(sortedIndices[position])).getString("rom_name"));
-                if (roms.getJSONObject(String.valueOf(sortedIndices[position])).getBoolean("official")) {
-                    holder.rv_main_roms_official.setText(context.getString(R.string.official));
-                } else {
-                    holder.rv_main_roms_official.setText(context.getString(R.string.unofficial));
-                }
-                holder.rv_main_roms_build_date.setText(roms.getJSONObject(String.valueOf(sortedIndices[position])).getString("build_date"));
-                holder.rv_main_roms_rom_version.setText(context.getString(R.string.version)+  ": " + roms.getJSONObject(String.valueOf(sortedIndices[position])).getString("rom_version"));
-                holder.rv_main_roms_rom_codename.setText(context.getString(R.string.codename)+  ": " + roms.getJSONObject(String.valueOf(sortedIndices[position])).getString("rom_codename"));
-                holder.rv_main_roms_android_version.setText(context.getString(R.string.android)+  ": " + roms.getJSONObject(String.valueOf(sortedIndices[position])).getString("android_version"));
+                    break;
+                case "By Date":
+                    sortedIndicesByDate = IntStream.range(0, count)
+                            .boxed().sorted((i, j) -> build_date.get(j).compareTo(build_date.get(i)))
+                            .mapToInt(ele -> ele).toArray();
+                    setContent(holder, sortedIndicesByDate[position]);
+                    break;
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setContent(@NonNull RecyclerViewAdapter_MainRoms.ViewHolder holder, int position) throws JSONException {
+        Picasso.with(context)
+                .load(roms.getJSONObject(String.valueOf(position)).getString("rom_image"))
+                .resize(1368, 1024)
+                .centerInside()
+                .into(holder.rv_main_roms_rom_image);
+        holder.rv_main_roms_author.setText(context.getString(R.string.author) + ": " + roms.getJSONObject(String.valueOf(position)).getString("author"));
+        holder.rv_main_roms_rom_name.setText(roms.getJSONObject(String.valueOf(position)).getString("rom_name"));
+        if (roms.getJSONObject(String.valueOf(position)).getBoolean("official")) {
+            holder.rv_main_roms_official.setText(context.getString(R.string.official));
+        } else {
+            holder.rv_main_roms_official.setText(context.getString(R.string.unofficial));
+        }
+        holder.rv_main_roms_build_date.setText(roms.getJSONObject(String.valueOf(position)).getString("build_date"));
+        holder.rv_main_roms_rom_version.setText(context.getString(R.string.version) + ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_version"));
+        holder.rv_main_roms_rom_codename.setText(context.getString(R.string.codename) + ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_codename"));
+        holder.rv_main_roms_android_version.setText(context.getString(R.string.android) + ": " + roms.getJSONObject(String.valueOf(position)).getString("android_version"));
     }
 
     @Override
@@ -144,42 +126,39 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                 @Override
                 public void onClick(View v) {
                     try {
-                        Bundle send_data = new Bundle();
-                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
-                            send_data.putString("rom_image", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("rom_image"));
-                            send_data.putString("changelog_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("changelog_link"));
-                            send_data.putString("download_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"));
-                            send_data.putString("download_vanilla_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_vanilla_link"));
-                            send_data.putString("mirror_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_link"));
-                            send_data.putString("mirror_vanilla_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("mirror_vanilla_link"));
-                            send_data.putString("donate_paypal_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_paypal_link"));
-                            send_data.putString("donate_buymeacoffee_link", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("donate_buymeacoffee_link"));
-                            send_data.putString("tg_author", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_author"));
-                            send_data.putString("tg_group", roms.getJSONObject(String.valueOf(getAdapterPosition())).getString("tg_group"));
-
-                        } else if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Name")) {
-
-                        } else if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Date")) {
-                            send_data.putString("rom_image", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("rom_image"));
-                            send_data.putString("changelog_link", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("changelog_link"));
-                            send_data.putString("download_link", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("download_link"));
-                            send_data.putString("download_vanilla_link", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("download_vanilla_link"));
-                            send_data.putString("mirror_link", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("mirror_link"));
-                            send_data.putString("mirror_vanilla_link", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("mirror_vanilla_link"));
-                            send_data.putString("donate_paypal_link", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("donate_paypal_link"));
-                            send_data.putString("donate_buymeacoffee_link", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("donate_buymeacoffee_link"));
-                            send_data.putString("tg_author", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("tg_author"));
-                            send_data.putString("tg_group", roms.getJSONObject(String.valueOf(sortedIndices[getAdapterPosition()])).getString("tg_group"));
-                        }
-
                         BottomSheetDialogFragment_MainRoms bottomSheetDialogFragment_mainRoms = new BottomSheetDialogFragment_MainRoms();
-                        bottomSheetDialogFragment_mainRoms.setArguments(send_data);
+                        switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
+                            case "By Json":
+                                bottomSheetDialogFragment_mainRoms.setArguments(send_data(getAdapterPosition()));
+                                break;
+                            case "By Name":
+
+                                break;
+                            case "By Date":
+                                bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedIndicesByDate[getAdapterPosition()]));
+                                break;
+                        }
                         bottomSheetDialogFragment_mainRoms.show(((FragmentActivity) context).getSupportFragmentManager(), "MainBottomSheet");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
             });
+        }
+
+        public Bundle send_data(int position) throws JSONException {
+            Bundle send_data = new Bundle();
+            send_data.putString("rom_image", roms.getJSONObject(String.valueOf(position)).getString("rom_image"));
+            send_data.putString("changelog_link", roms.getJSONObject(String.valueOf(position)).getString("changelog_link"));
+            send_data.putString("download_link", roms.getJSONObject(String.valueOf(position)).getString("download_link"));
+            send_data.putString("download_vanilla_link", roms.getJSONObject(String.valueOf(position)).getString("download_vanilla_link"));
+            send_data.putString("mirror_link", roms.getJSONObject(String.valueOf(position)).getString("mirror_link"));
+            send_data.putString("mirror_vanilla_link", roms.getJSONObject(String.valueOf(position)).getString("mirror_vanilla_link"));
+            send_data.putString("donate_paypal_link", roms.getJSONObject(String.valueOf(position)).getString("donate_paypal_link"));
+            send_data.putString("donate_buymeacoffee_link", roms.getJSONObject(String.valueOf(position)).getString("donate_buymeacoffee_link"));
+            send_data.putString("tg_author", roms.getJSONObject(String.valueOf(position)).getString("tg_author"));
+            send_data.putString("tg_group", roms.getJSONObject(String.valueOf(position)).getString("tg_group"));
+            return send_data;
         }
     }
 }
