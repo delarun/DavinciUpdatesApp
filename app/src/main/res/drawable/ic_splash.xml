@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:drawable="@color/black"/>
 
@@ -8,6 +9,5 @@
         android:height="250dp"
         android:gravity="center"
         android:drawable="@drawable/splash"/>
-
 
 </layer-list>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -33,6 +35,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     ArrayList<String> build_date = new ArrayList<>();
     ArrayList<String> additionally_name = new ArrayList<>();
     int[] sortedItems;
+    Drawable placeholder;
 
     public RecyclerViewAdapter_MainAdditionally(Context context, JSONObject additionally, int count) throws JSONException {
         this.context = context;
@@ -50,8 +53,12 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_main_additionally, null);
         View background = view.findViewById(R.id.rv_main_additionally_background);
-        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
+        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
             background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night, parent.getContext().getTheme()));
+            placeholder = ContextCompat.getDrawable(parent.getContext(), R.drawable.loading_placeholder_white);
+        } else {
+            placeholder = ContextCompat.getDrawable(parent.getContext(), R.drawable.loading_placeholder_black);
+        }
         return new ViewHolder(view);
     }
 
@@ -85,6 +92,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                 .load(additionally.getJSONObject(String.valueOf(position)).getString("additionally_image"))
                 .resize(1368, 1024)
                 .centerInside()
+                .placeholder(placeholder)
                 .into(holder.rv_main_additionally_image);
         holder.rv_main_additionally_name.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_name"));
         holder.rv_main_additionally_version.setText(additionally.getJSONObject(String.valueOf(position)).getString("additionally_version"));

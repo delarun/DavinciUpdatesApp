@@ -3,6 +3,7 @@ package me.zadli.davinciupdatesapp.adapters;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +35,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     ArrayList<String> build_date = new ArrayList<>();
     ArrayList<String> rom_name = new ArrayList<>();
     int[] sortedItems;
+    Drawable placeholder;
 
     public RecyclerViewAdapter_MainRoms(Context context, JSONObject roms, int count) throws JSONException {
         this.context = context;
@@ -50,8 +53,12 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_main_roms, null);
         View background = view.findViewById(R.id.rv_main_roms_background);
-        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
+        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
             background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night, parent.getContext().getTheme()));
+            placeholder = ContextCompat.getDrawable(parent.getContext(), R.drawable.loading_placeholder_white);
+        } else {
+            placeholder = ContextCompat.getDrawable(parent.getContext(), R.drawable.loading_placeholder_black);
+        }
         return new ViewHolder(view);
     }
 
@@ -85,6 +92,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                 .load(roms.getJSONObject(String.valueOf(position)).getString("rom_image"))
                 .resize(1368, 1024)
                 .centerInside()
+                .placeholder(placeholder)
                 .into(holder.rv_main_roms_rom_image);
         holder.rv_main_roms_author.setText(String.format("%s: %s", context.getString(R.string.author), roms.getJSONObject(String.valueOf(position)).getString("author")));
         holder.rv_main_roms_rom_name.setText(roms.getJSONObject(String.valueOf(position)).getString("rom_name"));
