@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="me.zadli.davinciupdatesapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,9 +11,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DavinciUpdatesApp">
-        <activity android:name=".activities.UpdaterActivity"></activity>
-        <activity android:name=".activities.MainActivity">
+        android:theme="@style/Theme.DavinciUpdatesApp"
+        android:fullBackupContent="@xml/backup_descriptor"
+        tools:ignore="AllowBackup">
+        <activity android:name=".activities.UpdaterActivity" />
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

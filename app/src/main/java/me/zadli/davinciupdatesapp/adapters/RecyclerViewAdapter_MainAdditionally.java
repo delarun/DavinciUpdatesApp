@@ -70,7 +70,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                     break;
                 case "By Date":
                     sortedItems = IntStream.range(0, count)
-                            .boxed().sorted((i, j) -> build_date.get(j).compareTo(build_date.get(i)))
+                            .boxed().sorted((i, j) -> build_date.get(i).compareTo(build_date.get(j)))
                             .mapToInt(ele -> ele).toArray();
                     setContent(holder, sortedItems[position]);
                     break;
