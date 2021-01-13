@@ -20,6 +20,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
+import jp.wasabeef.blurry.Blurry;
 import me.zadli.davinciupdatesapp.R;
 
 public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragment {
@@ -27,6 +28,8 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_roms_bottom_sheet, container, false);
+
+        Blurry.with(getContext()).animate(250).onto((ViewGroup) Objects.requireNonNull(getActivity()).getWindow().getDecorView().getRootView());
 
         ImageView fragment_main_roms_bottom_sheet_rom_image = view.findViewById(R.id.fragment_main_roms_bottom_sheet_rom_image);
         Button fragment_main_roms_bottom_sheet_changelog_link = view.findViewById(R.id.fragment_main_roms_bottom_sheet_changelog_link);
@@ -138,5 +141,11 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.MyBottomSheetDialogTheme);
         return super.onCreateDialog(savedInstanceState);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Blurry.delete((ViewGroup) Objects.requireNonNull(getActivity()).getWindow().getDecorView().getRootView());
     }
 }

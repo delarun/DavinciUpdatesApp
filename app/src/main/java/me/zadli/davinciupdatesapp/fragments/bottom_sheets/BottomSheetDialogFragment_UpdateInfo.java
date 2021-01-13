@@ -21,6 +21,7 @@ import org.json.JSONException;
 
 import java.util.Objects;
 
+import jp.wasabeef.blurry.Blurry;
 import me.zadli.davinciupdatesapp.R;
 
 public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragment {
@@ -30,6 +31,8 @@ public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragm
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_updater_info_bottom_sheet, container, false);
+
+        Blurry.with(getContext()).animate(250).onto((ViewGroup) Objects.requireNonNull(getActivity()).getWindow().getDecorView().getRootView());
 
         View fragment_updater_info_bottom_sheet_background = view.findViewById(R.id.fragment_updater_info_bottom_sheet_background);
         TextView fragment_updater_info_bottom_sheet_name = view.findViewById(R.id.fragment_updater_info_bottom_sheet_name);
@@ -67,5 +70,11 @@ public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragm
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.MyBottomSheetDialogTheme);
         return super.onCreateDialog(savedInstanceState);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Blurry.delete((ViewGroup) Objects.requireNonNull(getActivity()).getWindow().getDecorView().getRootView());
     }
 }
