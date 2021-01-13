@@ -50,9 +50,8 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_main_roms, null);
         View background = view.findViewById(R.id.rv_main_roms_background);
-        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night,parent.getContext().getTheme()));
-        }
+        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night, parent.getContext().getTheme()));
         return new ViewHolder(view);
     }
 
@@ -127,20 +126,17 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
             rv_main_roms_rom_codename = itemView.findViewById(R.id.rv_main_roms_rom_codename);
             rv_main_roms_android_version = itemView.findViewById(R.id.rv_main_roms_android_version);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        BottomSheetDialogFragment_MainRoms bottomSheetDialogFragment_mainRoms = new BottomSheetDialogFragment_MainRoms();
-                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
-                            bottomSheetDialogFragment_mainRoms.setArguments(send_data(getAdapterPosition()));
-                        } else {
-                            bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedItems[getAdapterPosition()]));
-                        }
-                        bottomSheetDialogFragment_mainRoms.show(((FragmentActivity) context).getSupportFragmentManager(), "MainBottomSheet");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+            itemView.setOnClickListener(v -> {
+                try {
+                    BottomSheetDialogFragment_MainRoms bottomSheetDialogFragment_mainRoms = new BottomSheetDialogFragment_MainRoms();
+                    if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                        bottomSheetDialogFragment_mainRoms.setArguments(send_data(getAdapterPosition()));
+                    } else {
+                        bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedItems[getAdapterPosition()]));
                     }
+                    bottomSheetDialogFragment_mainRoms.show(((FragmentActivity) context).getSupportFragmentManager(), "MainBottomSheet");
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             });
         }

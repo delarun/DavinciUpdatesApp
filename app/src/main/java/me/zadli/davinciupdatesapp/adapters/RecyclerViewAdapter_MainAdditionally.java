@@ -50,9 +50,8 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_main_additionally, null);
         View background = view.findViewById(R.id.rv_main_additionally_background);
-        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
+        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
             background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night, parent.getContext().getTheme()));
-        }
         return new ViewHolder(view);
     }
 
@@ -113,18 +112,15 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
             rv_main_additionally_image = itemView.findViewById(R.id.rv_main_additionally_image);
             rv_main_additionally_download_button = itemView.findViewById(R.id.rv_main_additionally_download_button);
 
-            rv_main_additionally_download_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
-                        } else {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("download_link"))));
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+            rv_main_additionally_download_button.setOnClickListener(v -> {
+                try {
+                    if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                    } else {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("download_link"))));
                     }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             });
         }

@@ -50,9 +50,8 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_main_kernels, null);
         View background = view.findViewById(R.id.rv_main_kernels_background);
-        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night,parent.getContext().getTheme()));
-        }
+        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night, parent.getContext().getTheme()));
         return new ViewHolder(view);
     }
 
@@ -121,33 +120,27 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
             rv_main_kernels_download_button = itemView.findViewById(R.id.rv_main_kernels_download_button);
             rv_main_kernels_changelog_button = itemView.findViewById(R.id.rv_main_kernels_changelog_button);
 
-            rv_main_kernels_download_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
-                        } else {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("download_link"))));
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+            rv_main_kernels_download_button.setOnClickListener(v -> {
+                try {
+                    if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                    } else {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("download_link"))));
                     }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             });
 
-            rv_main_kernels_changelog_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("kernel_changelog_link"))));
-                        } else {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("kernel_changelog_link"))));
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+            rv_main_kernels_changelog_button.setOnClickListener(v -> {
+                try {
+                    if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("kernel_changelog_link"))));
+                    } else {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("kernel_changelog_link"))));
                     }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             });
         }

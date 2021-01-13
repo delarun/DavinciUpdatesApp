@@ -48,14 +48,11 @@ public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragm
             fragment_updater_info_bottom_sheet_name.setText(response.getJSONObject(0).getString("name"));
             fragment_updater_info_bottom_sheet_tag_name.setText(response.getJSONObject(0).getString("tag_name"));
             fragment_updater_info_bottom_sheet_date.setText(response.getJSONObject(0).getString("published_at"));
-            fragment_updater_info_bottom_sheet_open_page_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.getJSONObject(0).getString("html_url"))));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+            fragment_updater_info_bottom_sheet_open_page_button.setOnClickListener(v -> {
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.getJSONObject(0).getString("html_url"))));
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             });
         } catch (JSONException e) {

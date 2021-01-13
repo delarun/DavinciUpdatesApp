@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -39,30 +37,22 @@ public class RomsFragment extends Fragment {
         Volley.newRequestQueue(Objects.requireNonNull(container.getContext())).add(new JsonObjectRequest(GET,
                 "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/roms.json",
                 null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONObject roms = response.getJSONObject("roms");
-                            RecyclerViewAdapter_MainRoms adapter_mainRoms = new RecyclerViewAdapter_MainRoms(
-                                    container.getContext(),
-                                    roms,
-                                    roms.length());
-                            main_roms_rv.setAdapter(adapter_mainRoms);
-                            main_roms_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                response -> {
+                    try {
+                        JSONObject roms = response.getJSONObject("roms");
+                        RecyclerViewAdapter_MainRoms adapter_mainRoms = new RecyclerViewAdapter_MainRoms(
+                                container.getContext(),
+                                roms,
+                                roms.length());
+                        main_roms_rv.setAdapter(adapter_mainRoms);
+                        main_roms_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+                error -> {
 
-                    }
-                }
-            )
-        );
+                }));
 
         return view;
     }

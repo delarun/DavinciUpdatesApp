@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -40,31 +38,23 @@ public class AdditionallyFragment extends Fragment {
                 GET,
                 "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/additionally.json",
                 null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONObject additionally = response.getJSONObject("additionally");
-                            RecyclerViewAdapter_MainAdditionally adapter_mainAdditionally = new RecyclerViewAdapter_MainAdditionally(
-                                    container.getContext(),
-                                    additionally,
-                                    additionally.length()
-                            );
-                            main_additionally_rv.setAdapter(adapter_mainAdditionally);
-                            main_additionally_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                response -> {
+                    try {
+                        JSONObject additionally = response.getJSONObject("additionally");
+                        RecyclerViewAdapter_MainAdditionally adapter_mainAdditionally = new RecyclerViewAdapter_MainAdditionally(
+                                container.getContext(),
+                                additionally,
+                                additionally.length()
+                        );
+                        main_additionally_rv.setAdapter(adapter_mainAdditionally);
+                        main_additionally_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+                error -> {
 
-                    }
-                }
-            )
-        );
+                }));
 
         return view;
     }

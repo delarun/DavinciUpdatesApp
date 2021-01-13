@@ -14,13 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.HashMap;
@@ -53,16 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
         chipNavigationBar = findViewById(R.id.сhipNavigationBar_main);
         chipNavigationBar.setItemSelected(R.id.action_roms, true);
+        chipNavigationBar.setOnItemSelectedListener(this::mainSwitcher);
 
         if ((getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
             chipNavigationBar.setBackgroundColor(getResources().getColor(R.color.background_night, getTheme())); //Set specific color in night mode
-
-        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(int i) {
-                mainSwitcher(i);
-            }
-        });
 
         checkUpdate();
     }
@@ -120,27 +111,21 @@ public class MainActivity extends AppCompatActivity {
                 GET,
                 "https://api.github.com/repos/zadli/DavinciUpdatesApp/releases",
                 null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        try {
-                            if (!response.getJSONObject(0).getString("tag_name").equals(BuildConfig.VERSION_NAME)) {
-                                Bundle bundle = new Bundle();
-                                bundle.putString("JSONArray", String.valueOf(response));
-                                BottomSheetDialogFragment_UpdateInfo bottomSheetDialogFragment_updateInfo = new BottomSheetDialogFragment_UpdateInfo();
-                                bottomSheetDialogFragment_updateInfo.setArguments(bundle);
-                                bottomSheetDialogFragment_updateInfo.show(getSupportFragmentManager(), "Updater");
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                response -> {
+                    try {
+                        if (!response.getJSONObject(0).getString("tag_name").equals(BuildConfig.VERSION_NAME)) {
+                            Bundle bundle = new Bundle();
+                            bundle.putString("JSONArray", String.valueOf(response));
+                            BottomSheetDialogFragment_UpdateInfo bottomSheetDialogFragment_updateInfo = new BottomSheetDialogFragment_UpdateInfo();
+                            bottomSheetDialogFragment_updateInfo.setArguments(bundle);
+                            bottomSheetDialogFragment_updateInfo.show(getSupportFragmentManager(), "Updater");
                         }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+                error -> {
 
-                    }
                 }) {
             @Override
             public Map<String, String> getHeaders() {

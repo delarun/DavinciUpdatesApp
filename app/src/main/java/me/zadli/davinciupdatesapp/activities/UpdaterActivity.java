@@ -7,13 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,22 +33,16 @@ public class UpdaterActivity extends AppCompatActivity {
                 GET,
                 "https://api.github.com/repos/zadli/DavinciUpdatesApp/releases",
                 null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        RecyclerViewAdapter_Updater adapter_updater = new RecyclerViewAdapter_Updater(
-                                UpdaterActivity.this,
-                                response,
-                                response.length());
-                        updater_rv.setAdapter(adapter_updater);
-                        updater_rv.startAnimation(AnimationUtils.loadAnimation(UpdaterActivity.this, R.anim.anim_alpha));
-                    }
+                response -> {
+                    RecyclerViewAdapter_Updater adapter_updater = new RecyclerViewAdapter_Updater(
+                            UpdaterActivity.this,
+                            response,
+                            response.length());
+                    updater_rv.setAdapter(adapter_updater);
+                    updater_rv.startAnimation(AnimationUtils.loadAnimation(UpdaterActivity.this, R.anim.anim_alpha));
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+                error -> {
 
-                    }
                 }) {
             @Override
             public Map<String, String> getHeaders() {

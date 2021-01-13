@@ -52,108 +52,81 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
                 .centerInside()
                 .into(fragment_main_roms_bottom_sheet_rom_image);
 
-        fragment_main_roms_bottom_sheet_changelog_link.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("changelog_link")));
-                startActivity(open_browser);
-            }
+        fragment_main_roms_bottom_sheet_changelog_link.setOnClickListener(v -> {
+            Intent open_browser = new Intent(Intent.ACTION_VIEW);
+            open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("changelog_link")));
+            startActivity(open_browser);
         });
 
-        fragment_main_roms_bottom_sheet_tg_author.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("tg_author")));
-                startActivity(open_browser);
-            }
+        fragment_main_roms_bottom_sheet_tg_author.setOnClickListener(v -> {
+            Intent open_browser = new Intent(Intent.ACTION_VIEW);
+            open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("tg_author")));
+            startActivity(open_browser);
         });
 
-        fragment_main_roms_bottom_sheet_tg_group.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("tg_group")));
-                startActivity(open_browser);
-            }
+        fragment_main_roms_bottom_sheet_tg_group.setOnClickListener(v -> {
+            Intent open_browser = new Intent(Intent.ACTION_VIEW);
+            open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("tg_group")));
+            startActivity(open_browser);
         });
 
-        if (getArguments().getString("download_link").equals("-")) {
+        if (Objects.requireNonNull(getArguments()).getString("download_link").equals("-")) {
             fragment_main_roms_bottom_sheet_download_link.setVisibility(View.GONE);
         } else {
-            fragment_main_roms_bottom_sheet_download_link.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("download_link")));
-                    startActivity(open_browser);
-                }
+            fragment_main_roms_bottom_sheet_download_link.setOnClickListener(v -> {
+                Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("download_link")));
+                startActivity(open_browser);
             });
         }
 
-        if (getArguments().getString("download_vanilla_link").equals("-")) {
+        if (Objects.requireNonNull(getArguments()).getString("download_vanilla_link").equals("-")) {
             fragment_main_roms_bottom_sheet_download_vanilla_link.setVisibility(View.GONE);
         } else {
-            fragment_main_roms_bottom_sheet_download_vanilla_link.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("download_vanilla_link")));
-                    startActivity(open_browser);
-                }
+            fragment_main_roms_bottom_sheet_download_vanilla_link.setOnClickListener(v -> {
+                Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("download_vanilla_link")));
+                startActivity(open_browser);
             });
         }
 
-        if (getArguments().getString("mirror_link").equals("-")) {
+        if (Objects.requireNonNull(getArguments()).getString("mirror_link").equals("-")) {
             fragment_main_roms_bottom_sheet_mirror_link.setVisibility(View.GONE);
         } else {
-            fragment_main_roms_bottom_sheet_mirror_link.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("mirror_link")));
-                    startActivity(open_browser);
-                }
+            fragment_main_roms_bottom_sheet_mirror_link.setOnClickListener(v -> {
+                Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("mirror_link")));
+                startActivity(open_browser);
             });
         }
 
-        if (getArguments().getString("mirror_vanilla_link").equals("-")) {
+        if (Objects.requireNonNull(getArguments()).getString("mirror_vanilla_link").equals("-")) {
             fragment_main_roms_bottom_sheet_mirror_vanilla_link.setVisibility(View.GONE);
         } else {
-            fragment_main_roms_bottom_sheet_mirror_vanilla_link.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("mirror_vanilla_link")));
-                    startActivity(open_browser);
-                }
+            fragment_main_roms_bottom_sheet_mirror_vanilla_link.setOnClickListener(v -> {
+                Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("mirror_vanilla_link")));
+                startActivity(open_browser);
             });
         }
 
-        if (getArguments().getString("donate_paypal_link").equals("-")) {
+        if (Objects.requireNonNull(getArguments()).getString("donate_paypal_link").equals("-")) {
             fragment_main_roms_bottom_sheet_donate_paypal_link.setVisibility(View.GONE);
         } else {
-            fragment_main_roms_bottom_sheet_donate_paypal_link.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("donate_paypal_link")));
-                    startActivity(open_browser);
-                }
+            fragment_main_roms_bottom_sheet_donate_paypal_link.setOnClickListener(v -> {
+                Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("donate_paypal_link")));
+                startActivity(open_browser);
             });
         }
 
-        if (getArguments().getString("donate_buymeacoffee_link").equals("-")) {
+        if (Objects.requireNonNull(getArguments()).getString("donate_buymeacoffee_link").equals("-")) {
             fragment_main_roms_bottom_sheet_donate_buymeacoffee_link.setVisibility(View.GONE);
         } else {
-            fragment_main_roms_bottom_sheet_donate_buymeacoffee_link.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent open_browser = new Intent(Intent.ACTION_VIEW);
-                    open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("donate_buymeacoffee_link")));
-                    startActivity(open_browser);
-                }
+            fragment_main_roms_bottom_sheet_donate_buymeacoffee_link.setOnClickListener(v -> {
+                Intent open_browser = new Intent(Intent.ACTION_VIEW);
+                open_browser.setData(Uri.parse(Objects.requireNonNull(getArguments()).getString("donate_buymeacoffee_link")));
+                startActivity(open_browser);
             });
         }
 

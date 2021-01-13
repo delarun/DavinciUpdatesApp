@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -40,31 +38,23 @@ public class KernelsFragment extends Fragment {
                 GET,
                 "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/kernels.json",
                 null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONObject kernels = response.getJSONObject("kernels");
-                            RecyclerViewAdapter_MainKernels adapter_mainKernels = new RecyclerViewAdapter_MainKernels(
-                                    container.getContext(),
-                                    kernels,
-                                    kernels.length());
-                            main_kernels_rv.setAdapter(adapter_mainKernels);
-                            main_kernels_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
+                response -> {
+                    try {
+                        JSONObject kernels = response.getJSONObject("kernels");
+                        RecyclerViewAdapter_MainKernels adapter_mainKernels = new RecyclerViewAdapter_MainKernels(
+                                container.getContext(),
+                                kernels,
+                                kernels.length());
+                        main_kernels_rv.setAdapter(adapter_mainKernels);
+                        main_kernels_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+                error -> {
 
-                    }
-                }
-            )
-        );
+                }));
 
         return view;
     }

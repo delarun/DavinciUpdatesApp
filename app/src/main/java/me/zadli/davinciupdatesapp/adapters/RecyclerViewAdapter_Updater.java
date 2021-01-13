@@ -34,9 +34,8 @@ public class RecyclerViewAdapter_Updater extends RecyclerView.Adapter<RecyclerVi
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.rv_updater, null);
         View background = view.findViewById(R.id.rv_updater_background);
-        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night,parent.getContext().getTheme()));
-        }
+        if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES)
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night, parent.getContext().getTheme()));
         return new ViewHolder(view);
     }
 
@@ -70,14 +69,11 @@ public class RecyclerViewAdapter_Updater extends RecyclerView.Adapter<RecyclerVi
             rv_updater_date = itemView.findViewById(R.id.rv_updater_date);
             rv_updater_open_page_button = itemView.findViewById(R.id.rv_updater_open_page_button);
 
-            rv_updater_open_page_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(updater.getJSONObject(getAdapterPosition()).getString("html_url"))));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+            rv_updater_open_page_button.setOnClickListener(v -> {
+                try {
+                    context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(updater.getJSONObject(getAdapterPosition()).getString("html_url"))));
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             });
         }
