@@ -38,9 +38,9 @@ public class BottomSheetDialogFragment_UpdateInfo extends BottomSheetDialogFragm
         Button fragment_updater_info_bottom_sheet_open_page_button = view.findViewById(R.id.fragment_updater_info_bottom_sheet_open_page_button);
 
         if ((requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            fragment_updater_info_bottom_sheet_background.setBackgroundColor(requireContext().getResources().getColor(R.color.background_night));
+            fragment_updater_info_bottom_sheet_background.setBackgroundColor(requireContext().getResources().getColor(R.color.background_night, requireContext().getTheme()));
         } else {
-            fragment_updater_info_bottom_sheet_background.setBackgroundColor(requireContext().getResources().getColor(R.color.white));
+            fragment_updater_info_bottom_sheet_background.setBackgroundColor(requireContext().getResources().getColor(R.color.white, requireContext().getTheme()));
         }
 
         try {

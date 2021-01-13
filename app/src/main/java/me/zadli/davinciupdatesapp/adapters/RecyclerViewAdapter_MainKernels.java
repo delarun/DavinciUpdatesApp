@@ -32,8 +32,7 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
     SharedPreferences sharedPreferences;
     ArrayList<String> build_date = new ArrayList<>();
     ArrayList<String> kernel_name = new ArrayList<>();
-    int[] sortedIndicesByDate;
-    int[] sortedIndicesByName;
+    int[] sortedItems;
 
     public RecyclerViewAdapter_MainKernels(Context context, JSONObject kernels, int count) throws JSONException {
         this.context = context;
@@ -43,7 +42,6 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
         for (int i = 0; i < count; i++) {
             build_date.add(i, kernels.getJSONObject(String.valueOf(i)).getString("build_date"));
             kernel_name.add(i, kernels.getJSONObject(String.valueOf(i)).getString("kernel_name"));
-
         }
     }
 
@@ -53,7 +51,7 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
         View view = View.inflate(parent.getContext(), R.layout.rv_main_kernels, null);
         View background = view.findViewById(R.id.rv_main_kernels_background);
         if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night));
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night,parent.getContext().getTheme()));
         }
         return new ViewHolder(view);
     }
@@ -66,16 +64,16 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
                     setContent(holder, position);
                     break;
                 case "By Name":
-                    sortedIndicesByName = IntStream.range(0, count)
+                    sortedItems = IntStream.range(0, count)
                             .boxed().sorted((i, j) -> kernel_name.get(i).compareTo(kernel_name.get(j)))
                             .mapToInt(ele -> ele).toArray();
-                    setContent(holder, sortedIndicesByName[position]);
+                    setContent(holder, sortedItems[position]);
                     break;
                 case "By Date":
-                    sortedIndicesByDate = IntStream.range(0, count)
+                    sortedItems = IntStream.range(0, count)
                             .boxed().sorted((i, j) -> build_date.get(j).compareTo(build_date.get(i)))
                             .mapToInt(ele -> ele).toArray();
-                    setContent(holder, sortedIndicesByDate[position]);
+                    setContent(holder, sortedItems[position]);
                     break;
             }
         } catch (JSONException e) {
@@ -94,7 +92,6 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
         holder.rv_main_kernels_version.setText(kernels.getJSONObject(String.valueOf(position)).getString("kernel_version"));
         holder.rv_main_kernels_kernel_kernel_version.setText(kernels.getJSONObject(String.valueOf(position)).getString("kernel_kernel_version"));
         holder.rv_main_kernels_build_date.setText(kernels.getJSONObject(String.valueOf(position)).getString("build_date"));
-
     }
 
     @Override
@@ -128,16 +125,10 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
                 @Override
                 public void onClick(View v) {
                     try {
-                        switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
-                            case "By Json":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
-                                break;
-                            case "By Name":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByName[getAdapterPosition()])).getString("download_link"))));
-                                break;
-                            case "By Date":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByDate[getAdapterPosition()])).getString("download_link"))));
-                                break;
+                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                        } else {
+                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("download_link"))));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -149,16 +140,10 @@ public class RecyclerViewAdapter_MainKernels extends RecyclerView.Adapter<Recycl
                 @Override
                 public void onClick(View v) {
                     try {
-                        switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
-                            case "By Json":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("kernel_changelog_link"))));
-                                break;
-                            case "By Name":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByName[getAdapterPosition()])).getString("kernel_changelog_link"))));
-                                break;
-                            case "By Date":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedIndicesByDate[getAdapterPosition()])).getString("kernel_changelog_link"))));
-                                break;
+                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(getAdapterPosition())).getString("kernel_changelog_link"))));
+                        } else {
+                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(kernels.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("kernel_changelog_link"))));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

@@ -32,8 +32,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
     SharedPreferences sharedPreferences;
     ArrayList<String> build_date = new ArrayList<>();
     ArrayList<String> additionally_name = new ArrayList<>();
-    int[] sortedIndicesByDate;
-    int[] sortedIndicesByName;
+    int[] sortedItems;
 
     public RecyclerViewAdapter_MainAdditionally(Context context, JSONObject additionally, int count) throws JSONException {
         this.context = context;
@@ -52,7 +51,7 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
         View view = View.inflate(parent.getContext(), R.layout.rv_main_additionally, null);
         View background = view.findViewById(R.id.rv_main_additionally_background);
         if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night));
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night, parent.getContext().getTheme()));
         }
         return new ViewHolder(view);
     }
@@ -65,16 +64,16 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                     setContent(holder, position);
                     break;
                 case "By Name":
-                    sortedIndicesByName = IntStream.range(0, count)
+                    sortedItems = IntStream.range(0, count)
                             .boxed().sorted((i, j) -> additionally_name.get(i).compareTo(additionally_name.get(j)))
                             .mapToInt(ele -> ele).toArray();
-                    setContent(holder, sortedIndicesByName[position]);
+                    setContent(holder, sortedItems[position]);
                     break;
                 case "By Date":
-                    sortedIndicesByDate = IntStream.range(0, count)
+                    sortedItems = IntStream.range(0, count)
                             .boxed().sorted((i, j) -> build_date.get(j).compareTo(build_date.get(i)))
                             .mapToInt(ele -> ele).toArray();
-                    setContent(holder, sortedIndicesByDate[position]);
+                    setContent(holder, sortedItems[position]);
                     break;
             }
         } catch (JSONException e) {
@@ -118,16 +117,10 @@ public class RecyclerViewAdapter_MainAdditionally extends RecyclerView.Adapter<R
                 @Override
                 public void onClick(View v) {
                     try {
-                        switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
-                            case "By Json":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
-                                break;
-                            case "By Name":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedIndicesByName[getAdapterPosition()])).getString("download_link"))));
-                                break;
-                            case "By Date":
-                                context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedIndicesByDate[getAdapterPosition()])).getString("download_link"))));
-                                break;
+                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(getAdapterPosition())).getString("download_link"))));
+                        } else {
+                            context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(additionally.getJSONObject(String.valueOf(sortedItems[getAdapterPosition()])).getString("download_link"))));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

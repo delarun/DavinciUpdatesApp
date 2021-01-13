@@ -2,7 +2,6 @@ package me.zadli.davinciupdatesapp.activities;
 
 import android.os.Bundle;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -53,12 +52,12 @@ public class UpdaterActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(UpdaterActivity.this, String.valueOf(error), Toast.LENGTH_LONG).show();
+
                     }
                 }) {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<>();
                 params.put("Accept: ", "application/vnd.github.v3+json");
                 return params;
             }

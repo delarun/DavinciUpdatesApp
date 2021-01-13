@@ -41,9 +41,9 @@ public class BottomSheetDialogFragment_MainRoms extends BottomSheetDialogFragmen
         ConstraintLayout fragment_main_roms_bottom_sheet_constraint_background = view.findViewById(R.id.fragment_main_roms_bottom_sheet_constraint_background);
 
         if ((requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.background_night));
+            fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.background_night, requireContext().getTheme()));
         } else {
-            fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.white));
+            fragment_main_roms_bottom_sheet_constraint_background.setBackgroundColor(requireContext().getResources().getColor(R.color.white, requireContext().getTheme()));
         }
 
         Picasso.with(requireContext())

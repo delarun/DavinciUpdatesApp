@@ -35,7 +35,7 @@ public class RecyclerViewAdapter_Updater extends RecyclerView.Adapter<RecyclerVi
         View view = View.inflate(parent.getContext(), R.layout.rv_updater, null);
         View background = view.findViewById(R.id.rv_updater_background);
         if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night));
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night,parent.getContext().getTheme()));
         }
         return new ViewHolder(view);
     }
@@ -46,7 +46,6 @@ public class RecyclerViewAdapter_Updater extends RecyclerView.Adapter<RecyclerVi
             holder.rv_updater_name.setText(updater.getJSONObject(position).getString("name"));
             holder.rv_updater_tag_name.setText(updater.getJSONObject(position).getString("tag_name"));
             holder.rv_updater_date.setText(updater.getJSONObject(position).getString("published_at"));
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -58,7 +57,6 @@ public class RecyclerViewAdapter_Updater extends RecyclerView.Adapter<RecyclerVi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         TextView rv_updater_name;
         TextView rv_updater_tag_name;
         TextView rv_updater_date;

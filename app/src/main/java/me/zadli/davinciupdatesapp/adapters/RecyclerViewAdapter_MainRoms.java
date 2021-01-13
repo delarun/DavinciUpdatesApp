@@ -32,8 +32,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
     SharedPreferences sharedPreferences;
     ArrayList<String> build_date = new ArrayList<>();
     ArrayList<String> rom_name = new ArrayList<>();
-    int[] sortedIndicesByDate;
-    int[] sortedIndicesByName;
+    int[] sortedItems;
 
     public RecyclerViewAdapter_MainRoms(Context context, JSONObject roms, int count) throws JSONException {
         this.context = context;
@@ -52,7 +51,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
         View view = View.inflate(parent.getContext(), R.layout.rv_main_roms, null);
         View background = view.findViewById(R.id.rv_main_roms_background);
         if ((parent.getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night));
+            background.setBackgroundColor(parent.getContext().getResources().getColor(R.color.background_night,parent.getContext().getTheme()));
         }
         return new ViewHolder(view);
     }
@@ -65,16 +64,16 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                     setContent(holder, position);
                     break;
                 case "By Name":
-                    sortedIndicesByName = IntStream.range(0, count)
+                    sortedItems = IntStream.range(0, count)
                             .boxed().sorted((i, j) -> rom_name.get(i).compareTo(rom_name.get(j)))
                             .mapToInt(ele -> ele).toArray();
-                    setContent(holder, sortedIndicesByName[position]);
+                    setContent(holder, sortedItems[position]);
                     break;
                 case "By Date":
-                    sortedIndicesByDate = IntStream.range(0, count)
+                    sortedItems = IntStream.range(0, count)
                             .boxed().sorted((i, j) -> build_date.get(j).compareTo(build_date.get(i)))
                             .mapToInt(ele -> ele).toArray();
-                    setContent(holder, sortedIndicesByDate[position]);
+                    setContent(holder, sortedItems[position]);
                     break;
             }
         } catch (JSONException e) {
@@ -88,7 +87,7 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                 .resize(1368, 1024)
                 .centerInside()
                 .into(holder.rv_main_roms_rom_image);
-        holder.rv_main_roms_author.setText(context.getString(R.string.author) + ": " + roms.getJSONObject(String.valueOf(position)).getString("author"));
+        holder.rv_main_roms_author.setText(String.format("%s: %s", context.getString(R.string.author), roms.getJSONObject(String.valueOf(position)).getString("author")));
         holder.rv_main_roms_rom_name.setText(roms.getJSONObject(String.valueOf(position)).getString("rom_name"));
         if (roms.getJSONObject(String.valueOf(position)).getBoolean("official")) {
             holder.rv_main_roms_official.setText(context.getString(R.string.official));
@@ -96,9 +95,9 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
             holder.rv_main_roms_official.setText(context.getString(R.string.unofficial));
         }
         holder.rv_main_roms_build_date.setText(roms.getJSONObject(String.valueOf(position)).getString("build_date"));
-        holder.rv_main_roms_rom_version.setText(context.getString(R.string.version) + ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_version"));
-        holder.rv_main_roms_rom_codename.setText(context.getString(R.string.codename) + ": " + roms.getJSONObject(String.valueOf(position)).getString("rom_codename"));
-        holder.rv_main_roms_android_version.setText(context.getString(R.string.android) + ": " + roms.getJSONObject(String.valueOf(position)).getString("android_version"));
+        holder.rv_main_roms_rom_version.setText(String.format("%s: %s", context.getString(R.string.version), roms.getJSONObject(String.valueOf(position)).getString("rom_version")));
+        holder.rv_main_roms_rom_codename.setText(String.format("%s: %s", context.getString(R.string.codename), roms.getJSONObject(String.valueOf(position)).getString("rom_codename")));
+        holder.rv_main_roms_android_version.setText(String.format("%s: %s", context.getString(R.string.android), roms.getJSONObject(String.valueOf(position)).getString("android_version")));
     }
 
     @Override
@@ -133,16 +132,10 @@ public class RecyclerViewAdapter_MainRoms extends RecyclerView.Adapter<RecyclerV
                 public void onClick(View v) {
                     try {
                         BottomSheetDialogFragment_MainRoms bottomSheetDialogFragment_mainRoms = new BottomSheetDialogFragment_MainRoms();
-                        switch (sharedPreferences.getString("SORT_METHOD", "By Json")) {
-                            case "By Json":
-                                bottomSheetDialogFragment_mainRoms.setArguments(send_data(getAdapterPosition()));
-                                break;
-                            case "By Name":
-                                bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedIndicesByName[getAdapterPosition()]));
-                                break;
-                            case "By Date":
-                                bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedIndicesByDate[getAdapterPosition()]));
-                                break;
+                        if (sharedPreferences.getString("SORT_METHOD", "By Json").equals("By Json")) {
+                            bottomSheetDialogFragment_mainRoms.setArguments(send_data(getAdapterPosition()));
+                        } else {
+                            bottomSheetDialogFragment_mainRoms.setArguments(send_data(sortedItems[getAdapterPosition()]));
                         }
                         bottomSheetDialogFragment_mainRoms.show(((FragmentActivity) context).getSupportFragmentManager(), "MainBottomSheet");
                     } catch (JSONException e) {
