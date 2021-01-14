@@ -25,10 +25,10 @@ import java.util.Map;
 
 import me.zadli.davinciupdatesapp.BuildConfig;
 import me.zadli.davinciupdatesapp.R;
-import me.zadli.davinciupdatesapp.fragments.AdditionallyFragment;
 import me.zadli.davinciupdatesapp.fragments.FirmwaresFragment;
 import me.zadli.davinciupdatesapp.fragments.KernelsFragment;
 import me.zadli.davinciupdatesapp.fragments.ModsFragment;
+import me.zadli.davinciupdatesapp.fragments.RecoveriesFragment;
 import me.zadli.davinciupdatesapp.fragments.RomsFragment;
 import me.zadli.davinciupdatesapp.fragments.bottom_sheets.BottomSheetDialogFragment_UpdateInfo;
 
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         .setItems(sortMethodArray, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                                switch (which){
+                                switch (which) {
                                     case 0:
                                         editor.putString("SORT_METHOD", "By Date");
                                         break;
@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_mods:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new ModsFragment()).commit();
                 break;
-            case R.id.action_additionally:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new AdditionallyFragment()).commit();
+            case R.id.action_recoveries:
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new RecoveriesFragment()).commit();
                 break;
             case R.id.action_kernels:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new KernelsFragment()).commit();

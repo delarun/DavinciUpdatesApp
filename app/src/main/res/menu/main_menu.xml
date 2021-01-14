@@ -18,9 +18,9 @@
         app:cnb_iconColor="@color/orange_200" />
 
     <item
-        android:id="@+id/action_additionally"
-        android:icon="@drawable/ic_additionally"
-        android:title="@string/additionally"
+        android:id="@+id/action_recoveries"
+        android:icon="@drawable/ic_recoveries"
+        android:title="@string/recoveries"
         app:cnb_iconColor="@color/purple_200"/>
 
     <item

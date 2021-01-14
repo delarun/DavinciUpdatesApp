@@ -38,5 +38,7 @@
     <string name="sort_by_json">Default</string>
     <string name="sort_by_date">By Date</string>
     <string name="firmwares">Firmwares</string>
+    <string name="recoveries">Recoveries</string>
+    <string name="recovery_name">Recovery name</string>
 
 </resources>

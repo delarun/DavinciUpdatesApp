@@ -1,0 +1,18 @@
+{
+    "recoveries":{
+        "0": {
+            "name": "OrangeFox Recovery",
+            "version": "R11.0",
+            "image": "https://telegra.ph/file/514613f933e0545fab5ba.jpg",
+            "upload_date": "2021-01-09",
+            "download_link": "https://cloud.zadli.me/index.php/s/aiqGgrf4xzRR2yE"
+        },
+        "1": {
+            "name": "TWRP Recovery",
+            "version": "3.5.0_9",
+            "image": "https://telegra.ph/file/a4b92c2f39f5da88030d2.jpg",
+            "upload_date": "2021-01-09",
+            "download_link": "https://eu.dl.twrp.me/davinci/twrp-3.5.0_9-0-davinci.img.html"
+        }
+    }
+}

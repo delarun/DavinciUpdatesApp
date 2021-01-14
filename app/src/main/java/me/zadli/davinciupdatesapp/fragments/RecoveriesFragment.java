@@ -19,35 +19,35 @@ import org.json.JSONObject;
 import java.util.Objects;
 
 import me.zadli.davinciupdatesapp.R;
-import me.zadli.davinciupdatesapp.adapters.RecyclerViewAdapter_MainAdditionally;
+import me.zadli.davinciupdatesapp.adapters.RecyclerViewAdapter_MainRecoveries;
 
 import static com.android.volley.Request.Method.GET;
 
-public class AdditionallyFragment extends Fragment {
+public class RecoveriesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_additionally, container, false);
+        View view = inflater.inflate(R.layout.fragment_recoveries, container, false);
 
-        RecyclerView main_additionally_rv = view.findViewById(R.id.main_additionally_rv);
+        RecyclerView main_recoveries_rv = view.findViewById(R.id.main_recoveries_rv);
 
-        main_additionally_rv.setLayoutManager(new LinearLayoutManager(container.getContext()));
+        main_recoveries_rv.setLayoutManager(new LinearLayoutManager(container.getContext()));
 
         Volley.newRequestQueue(Objects.requireNonNull(container.getContext())).add(new JsonObjectRequest(
                 GET,
-                "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/additionally.json",
+                "https://raw.githubusercontent.com/zadli/DavinciUpdatesApp/main/jsons/recoveries.json",
                 null,
                 response -> {
                     try {
-                        JSONObject additionally = response.getJSONObject("additionally");
-                        RecyclerViewAdapter_MainAdditionally adapter_mainAdditionally = new RecyclerViewAdapter_MainAdditionally(
+                        JSONObject recoveries = response.getJSONObject("recoveries");
+                        RecyclerViewAdapter_MainRecoveries adapter_mainRecoveries = new RecyclerViewAdapter_MainRecoveries(
                                 container.getContext(),
-                                additionally,
-                                additionally.length()
+                                recoveries,
+                                recoveries.length()
                         );
-                        main_additionally_rv.setAdapter(adapter_mainAdditionally);
-                        main_additionally_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
+                        main_recoveries_rv.setAdapter(adapter_mainRecoveries);
+                        main_recoveries_rv.startAnimation(AnimationUtils.loadAnimation(container.getContext(), R.anim.anim_alpha));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
