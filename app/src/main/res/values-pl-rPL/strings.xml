@@ -33,4 +33,10 @@
     <string name="mirror_link_vanilla">"Link zewnętrzny do pobrania zwykłej wersji"</string>
     <string name="donate_to_author_paypal">"Wesprzyj autora na PayPalu"</string>
     <string name="donate_to_author_buymeacoffee">"Wesprzyj autora na BuyMeACoffee"</string>
+    <string name="sort_method">Sposób sortowania</string>
+    <string name="choose_sort_method">Wybierz sposób sortowania</string>
+    <string name="sort_by_name">Według nazwy</string>
+    <string name="sort_by_json">Według pliku JSON</string>
+    <string name="sort_by_date">Według daty</string>
+    <string name="firmwares">Oprogramowania</string>
 </resources>

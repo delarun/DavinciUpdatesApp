@@ -35,7 +35,7 @@
     <string name="sort_method">Sorting Method</string>
     <string name="choose_sort_method">Choose sorting method</string>
     <string name="sort_by_name">By Name</string>
-    <string name="sort_by_json">By Json</string>
+    <string name="sort_by_json">Default</string>
     <string name="sort_by_date">By Date</string>
     <string name="firmwares">Firmwares</string>
 
