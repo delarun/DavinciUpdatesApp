@@ -26,6 +26,7 @@ import java.util.Map;
 import me.zadli.davinciupdatesapp.BuildConfig;
 import me.zadli.davinciupdatesapp.R;
 import me.zadli.davinciupdatesapp.fragments.AdditionallyFragment;
+import me.zadli.davinciupdatesapp.fragments.FirmwaresFragment;
 import me.zadli.davinciupdatesapp.fragments.KernelsFragment;
 import me.zadli.davinciupdatesapp.fragments.ModsFragment;
 import me.zadli.davinciupdatesapp.fragments.RomsFragment;
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     ChipNavigationBar chipNavigationBar;
-    String[] sortMethodArray = {"By Date", "By Name", "By Json"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,15 +73,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, UpdaterActivity.class));
                 break;
             case R.id.action_sort_method:
+                String[] sortMethodArray = {getString(R.string.sort_by_date), getString(R.string.sort_by_name), getString(R.string.sort_by_json)};
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle(R.string.choose_sort_method)
                         .setItems(sortMethodArray, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString("SORT_METHOD", sortMethodArray[which]);
+                                switch (which){
+                                    case 0:
+                                        editor.putString("SORT_METHOD", "By Date");
+                                        break;
+                                    case 1:
+                                        editor.putString("SORT_METHOD", "By Name");
+                                        break;
+                                    case 2:
+                                        editor.putString("SORT_METHOD", "By Json");
+                                        break;
+                                }
                                 editor.apply();
                                 mainSwitcher(chipNavigationBar.getSelectedItemId());
-
                             }
                         });
                 builder.create().show();
@@ -103,6 +114,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_kernels:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new KernelsFragment()).commit();
+                break;
+            case R.id.action_firmwares:
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new FirmwaresFragment()).commit();
                 break;
         }
     }

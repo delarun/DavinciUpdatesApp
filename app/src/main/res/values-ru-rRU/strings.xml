@@ -31,4 +31,12 @@
     <string name="mirror_link_vanilla">"Зеркало на скачивание (Без Гаппсов)"</string>
     <string name="donate_to_author_paypal">"Задонатить автору (PayPal)"</string>
     <string name="donate_to_author_buymeacoffee">"Задонатить автору (BuyMeACoffee)"</string>
+    <string name="official">Official</string>
+    <string name="unofficial">Unofficial</string>
+    <string name="sort_method">Метод сортировки</string>
+    <string name="choose_sort_method">Выберите метод сортировки</string>
+    <string name="sort_by_name">По имени</string>
+    <string name="sort_by_json">По умолчанию</string>
+    <string name="sort_by_date">По дате</string>
+    <string name="firmwares">Фирмварь</string>
 </resources>

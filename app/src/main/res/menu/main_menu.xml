@@ -22,4 +22,10 @@
         android:icon="@drawable/ic_additionally"
         android:title="@string/additionally"
         app:cnb_iconColor="@color/purple_200"/>
+
+    <item
+        android:id="@+id/action_firmwares"
+        android:icon="@drawable/ic_firmwares"
+        android:title="@string/firmwares"
+        app:cnb_iconColor="@color/purple_200"/>
 </menu>
