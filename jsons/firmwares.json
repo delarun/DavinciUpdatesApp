@@ -1,49 +1,49 @@
 {
-    "firmwares":{
-        "0":{
-            "version":"21.1.6",
-            "branch":"Weekly",
-            "phone":"davinci",
-            "android_version":"11.0",
-            "region":"China",
-            "date":"2021-01-08",
-            "download_link":"https://xiaomifirmwareupdater.com/firmware/davinci/weekly/21.1.6/"
+    "firmwares": {
+        "0": {
+            "version": "V12.0.5.0.QFJMIXM",
+            "branch": "stable",
+            "phone": "davinci",
+            "android_version": "10.0",
+            "region": "Global",
+            "date": "2020-10-16",
+            "download_link": "https://github.com/XiaomiFirmwareUpdater/firmware_xiaomi_davinci/releases/download/stable-17.10.2020/fw_davinci_miui_DAVINCIGlobal_V12.0.5.0.QFJMIXM_68eafed495_10.0.zip"
         },
-        "1":{
-            "version":"12.0.6",
-            "branch":"Stable",
-            "phone":"davinci",
-            "android_version":"10.0",
-            "region":"China",
-            "date":"2020-11-10",
-            "download_link":"https://xiaomifirmwareupdater.com/firmware/davinci/stable/V12.0.6.0.QFJCNXM/"
+        "1": {
+            "version": "V12.0.6.0.QFJCNXM",
+            "branch": "stable",
+            "phone": "davinci",
+            "android_version": "10.0",
+            "region": "China",
+            "date": "2020-11-10",
+            "download_link": "https://github.com/XiaomiFirmwareUpdater/firmware_xiaomi_davinci/releases/download/stable-10.11.2020/fw_davinci_miui_DAVINCI_V12.0.6.0.QFJCNXM_5ca52304f9_10.0.zip"
         },
-        "2":{
-            "version":"12.0.3",
-            "branch":"Stable",
-            "phone":"davinci",
-            "android_version":"10.0",
-            "region":"Europe",
-            "date":"2020-10-23",
-            "download_link":"https://xiaomifirmwareupdater.com/firmware/davinci/stable/V12.0.3.0.QFJEUXM/"
+        "2": {
+            "version": "21.1.6",
+            "branch": "weekly",
+            "phone": "davinci",
+            "android_version": "11.0",
+            "region": "China",
+            "date": "2021-01-08",
+            "download_link": "https://github.com/XiaomiFirmwareUpdater/firmware_xiaomi_davinci/releases/download/weekly-08.01.2021/fw_davinci_miui_DAVINCI_21.1.6_594cd21df3_11.0.zip"
         },
-        "3":{
-            "version":"12.0.5",
-            "branch":"Stable",
-            "phone":"davinci",
-            "android_version":"10.0",
-            "region":"Global",
-            "date":"2020-10-16",
-            "download_link":"https://xiaomifirmwareupdater.com/firmware/davinci/stable/V12.0.5.0.QFJMIXM/"
+        "3": {
+            "version": "V12.0.3.0.QFJEUXM",
+            "branch": "stable",
+            "phone": "davinci",
+            "android_version": "10.0",
+            "region": "Europe",
+            "date": "2020-10-23",
+            "download_link": "https://github.com/XiaomiFirmwareUpdater/firmware_xiaomi_davinci/releases/download/stable-23.10.2020/fw_davinci_miui_DAVINCIEEAGlobal_V12.0.3.0.QFJEUXM_12b99693bc_10.0.zip"
         },
-        "4":{
-            "version":"12.0.5",
-            "branch":"Stable",
-            "phone":"davinciin",
-            "android_version":"10.0",
-            "region":"India",
-            "date":"2020-10-19",
-            "download_link":"https://xiaomifirmwareupdater.com/firmware/davinciin/stable/V12.0.5.0.QFJINXM/"
+        "4": {
+            "version": "V12.0.5.0.QFJMIXM",
+            "branch": "stable",
+            "phone": "davinciin",
+            "android_version": "10.0",
+            "region": "Global",
+            "date": "2020-10-16",
+            "download_link": "https://github.com/XiaomiFirmwareUpdater/firmware_xiaomi_davinci/releases/download/stable-17.10.2020/fw_davinci_miui_DAVINCIGlobal_V12.0.5.0.QFJMIXM_68eafed495_10.0.zip"
         }
     }
 }
