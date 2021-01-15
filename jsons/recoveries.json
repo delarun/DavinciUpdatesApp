@@ -13,6 +13,13 @@
             "image": "https://telegra.ph/file/a4b92c2f39f5da88030d2.jpg",
             "upload_date": "2021-01-09",
             "download_link": "https://eu.dl.twrp.me/davinci/twrp-3.5.0_9-0-davinci.img.html"
+        },
+        "2": {
+            "name": "SHRP Recovery",
+            "version": "3.0",
+            "image": "https://telegra.ph/file/8e05dacd077f882a962da.jpg",
+            "upload_date": "2021-01-15",
+            "download_link": "https://sourceforge.net/projects/shrp/files/davinci/SHRP_v3.0_stable-Official_davinci-101013012021.zip/download"
         }
     }
 }
