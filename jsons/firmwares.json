@@ -21,14 +21,14 @@
             "download_osdn_link": "https://osdn.net/projects/xiaomifirmwareupdater/storage/Stable/V12/davinci/fw_davinci_miui_DAVINCI_V12.0.6.0.QFJCNXM_5ca52304f9_10.0.zip"
         },
         "2": {
-            "version": "21.1.6",
+            "version": "21.1.13",
             "branch": "weekly",
             "phone": "davinci",
             "android_version": "11.0",
             "region": "China",
-            "date": "2021-01-08",
-            "download_link": "https://github.com/XiaomiFirmwareUpdater/firmware_xiaomi_davinci/releases/download/weekly-08.01.2021/fw_davinci_miui_DAVINCI_21.1.6_594cd21df3_11.0.zip",
-            "download_osdn_link": "https://osdn.net/projects/xiaomifirmwareupdater/storage/Developer/21.1.6/davinci/fw_davinci_miui_DAVINCI_21.1.6_594cd21df3_11.0.zip"
+            "date": "2021-01-15",
+            "download_link": "https://github.com/XiaomiFirmwareUpdater/firmware_xiaomi_davinci/releases/download/weekly-15.01.2021/fw_davinci_miui_DAVINCI_21.1.13_68068ad72e_11.0.zip",
+            "download_osdn_link": "https://osdn.net/projects/xiaomifirmwareupdater/storage/Developer/21.1.13/davinci/fw_davinci_miui_DAVINCI_21.1.13_68068ad72e_11.0.zip"
         },
         "3": {
             "version": "V12.0.3.0.QFJEUXM",
