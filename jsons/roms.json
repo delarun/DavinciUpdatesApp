@@ -284,6 +284,25 @@
             "donate_buymeacoffee_link": "-",
             "tg_author": "https://t.me/noobvansh",
             "tg_group": "http://t.me/revengemi9t"
+        },
+        "15": {
+            "author": "Louis1977",
+            "rom_name": "CherishOS",
+            "rom_image": "https://telegra.ph/file/d1268f686a59de6483dda.jpg",
+            "android_version": "11.0",
+            "build_date": "2021-01-16",
+            "rom_version": "2.1.5",
+            "rom_codename": "-",
+            "changelog_link": "https://t.me/cherishosdavinci/2563",
+            "official": true,
+            "download_link": "https://drive.google.com/file/d/1ziXNiWJlIa6JeMnBIyQNBY5zHVZhMyMQ/view?usp=sharing",
+            "download_vanilla_link": "-",
+            "mirror_link": "-",
+            "mirror_vanilla_link": "-",
+            "donate_paypal_link": "-",
+            "donate_buymeacoffee_link": "-",
+            "tg_author": "https://t.me/Louis1977",
+            "tg_group": "https://t.me/cherishosdavinci"
         }
     }
 }
