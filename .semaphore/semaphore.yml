@@ -1,0 +1,21 @@
+version: v1.0
+name: JSON Check Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: JSON check
+    task:
+      jobs:
+        - name: Main job
+          commands:
+            - checkout
+            - chmod +x .semaphore/scripts/check.sh
+            - .semaphore/scripts/check.sh
+      env_vars:
+        - name: TG_DUP_CHAT_ID
+          value: '-1001120716830'
+      secrets:
+        - name: ZadliCI_Token
+        - name: ZadliCI_Server_IP
