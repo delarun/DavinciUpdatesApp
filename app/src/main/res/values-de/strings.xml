@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Davinci Updates App"</string>
+    <string name="updater">"Updates"</string>
+    <string name="roms">"Roms"</string>
+    <string name="mods">"Mods"</string>
+    <string name="kernels">"Kernels"</string>
+    <string name="additionally">"Add-ons"</string>
+    <string name="open_page">"Öffne Seite"</string>
+    <string name="author">"Autor"</string>
+    <string name="type">"Typ"</string>
+    <string name="date">"Datum"</string>
+    <string name="version">"Version"</string>
+    <string name="codename">"Codename"</string>
+    <string name="android">"Android"</string>
+    <string name="mod_name">"Mod Name"</string>
+    <string name="kernel_name">"Kernel Name"</string>
+    <string name="download">"Download"</string>
+    <string name="kernel_version">"Kernel Version"</string>
+    <string name="changelog">"Changelog"</string>
+    <string name="add_on_name">"Add-on Name"</string>
+    <string name="name">"Name"</string>
+    <string name="tag">"Tag"</string>
+    <string name="new_update_available">"Neues Update verfügbar"</string>
+    <string name="changelog_link">"Changelog Link"</string>
+    <string name="download_link_gapps">"Download Link (Gapps)"</string>
+    <string name="author_s_telegram">"Telegram des Autors"</string>
+    <string name="telegram_group">"Telegram Gruppe"</string>
+    <string name="download_link_vanilla">"Download Link (Vanilla)"</string>
+    <string name="mirror_link_gapps">"Mirror Link (Gapps)"</string>
+    <string name="mirror_link_vanilla">"Mirror Link (Vanilla)"</string>
+    <string name="donate_to_author_paypal">"Spende dem Autor (PayPal)"</string>
+    <string name="donate_to_author_buymeacoffee">"Spende dem Autor (BuyMeACoffee)"</string>
+</resources>

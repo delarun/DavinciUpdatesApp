@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Όνομα της εφαρμογής"</string>
+    <string name="updater">"Αναβάθμιση "</string>
+    <string name="roms">"Λογισμικά"</string>
+    <string name="mods">"Mods"</string>
+    <string name="kernels">"Kernels"</string>
+    <string name="additionally">"Επιπλέον"</string>
+    <string name="open_page">"Άνοιξε σελίδα"</string>
+    <string name="author">"Ιδιοκτήτης"</string>
+    <string name="type">"Τύπος"</string>
+    <string name="date">"Ημερομηνία"</string>
+    <string name="version">"Έκδοση"</string>
+    <string name="codename">"Συμβολικό όνομα"</string>
+    <string name="android">"Android"</string>
+    <string name="mod_name">"Όνομα του mod"</string>
+    <string name="kernel_name">"Όνομα του kernel"</string>
+    <string name="download">"Κατέβασε"</string>
+    <string name="kernel_version">"Έκδοση kernel"</string>
+    <string name="changelog">"Πληροφορίες αναβάθμισης"</string>
+    <string name="add_on_name">"Όνομα add_on"</string>
+    <string name="name">"Όνομα"</string>
+    <string name="tag">"Έκδοση"</string>
+    <string name="new_update_available">"Καινούργια αναβάθμιση διαθέσιμη"</string>
+    <string name="changelog_link">"Ιστότοπος με πληροφορίες αναβάθμισης"</string>
+    <string name="download_link_gapps">"Κατεβάστε gapps"</string>
+    <string name="author_s_telegram">"Telegram του ιδιοκτήτη"</string>
+    <string name="telegram_group">"Telegram Γκρουπ "</string>
+    <string name="download_link_vanilla">"Κατέβασε vanilla"</string>
+    <string name="mirror_link_gapps">"Επιπλέον link για gapps "</string>
+    <string name="mirror_link_vanilla">"Επιπλέον link για vanilla"</string>
+    <string name="donate_to_author_paypal">"Υποστήριξε τον ιδιοκτήτη μέσω paypal"</string>
+    <string name="donate_to_author_buymeacoffee">"Υποστήριξε τον ιδιοκτήτη μέσω buymeacoffe"</string>
+</resources>

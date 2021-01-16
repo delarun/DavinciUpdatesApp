@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"DaVinci Güncelleme Uygulaması"</string>
+    <string name="updater">"Güncelleme"</string>
+    <string name="roms">"Rom'lar"</string>
+    <string name="mods">"Mod'lar"</string>
+    <string name="kernels">"Kernel'ler"</string>
+    <string name="additionally">"Eklentiler"</string>
+    <string name="open_page">"Sayfayı Aç"</string>
+    <string name="author">"Geliştirici"</string>
+    <string name="type">"Tip"</string>
+    <string name="date">"Tarih"</string>
+    <string name="version">"Versiyon"</string>
+    <string name="codename">"Kod Adı"</string>
+    <string name="android">"Android"</string>
+    <string name="mod_name">"Mod Adı"</string>
+    <string name="kernel_name">"Kernel Adı"</string>
+    <string name="download">"İndir"</string>
+    <string name="kernel_version">"Kernel Versiyonu"</string>
+    <string name="changelog">"Değişiklikler"</string>
+    <string name="add_on_name">"Eklenti Adı"</string>
+    <string name="name">"İsim"</string>
+    <string name="tag">"Etiket"</string>
+    <string name="new_update_available">"Yeni Güncelleme Mevcut"</string>
+    <string name="changelog_link">"Değişiklikler Linki"</string>
+    <string name="download_link_gapps">"İndirme Linki (Gapps)"</string>
+    <string name="author_s_telegram">"Geliştirici Telegram Hesabı"</string>
+    <string name="telegram_group">"Telegram Grubu"</string>
+    <string name="download_link_vanilla">"İndirme Linki (Vanilla)"</string>
+    <string name="mirror_link_gapps">"Yedek İndirme Linki (Gapps)"</string>
+    <string name="mirror_link_vanilla">"Yedek İndirme Linki (Vanilla)"</string>
+    <string name="donate_to_author_paypal">"Bağış yap (PayPay)"</string>
+    <string name="donate_to_author_buymeacoffee">"Bağış yap (Bi' kahve)"</string>
+</resources>
