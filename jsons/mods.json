@@ -9,10 +9,10 @@
         },
         "1": {
             "name": "Magisk",
-            "version": "v21.2",
-            "image": "-",
-            "upload_date": "2021-01-09",
-            "download_link": "https://cloud.zadli.me/index.php/s/fAD4zfaEoxGYpoS"
+            "version": "v21.4",
+            "image": "https://telegra.ph/file/48fd84349d84de913c340.jpg",
+            "upload_date": "2021-01-17",
+            "download_link": "https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-v21.4.zip"
         }
     }
 }
