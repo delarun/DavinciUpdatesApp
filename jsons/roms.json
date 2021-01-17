@@ -303,6 +303,25 @@
             "donate_buymeacoffee_link": "-",
             "tg_author": "https://t.me/Louis1977",
             "tg_group": "https://t.me/cherishosdavinci"
+        },
+        "16": {
+            "author": "Adarsh and Yusuf",
+            "rom_name": "PixelishExperience",
+            "rom_image": "https://telegra.ph/file/5efec2980239e9c78f57d.jpg",
+            "android_version": "11.0",
+            "build_date": "2021-01-16",
+            "rom_version": "-",
+            "rom_codename": "-",
+            "changelog_link": "https://telegra.ph/Pixel-ish-16012020-update-01-16",
+            "official": true,
+            "download_link": "http://bit.ly/2LEhL9Z",
+            "download_vanilla_link": "-",
+            "mirror_link": "-",
+            "mirror_vanilla_link": "-",
+            "donate_paypal_link": "-",
+            "donate_buymeacoffee_link": "-",
+            "tg_author": "https://telegra.ph/PixelishExperience-Authors-01-17",
+            "tg_group": "https://t.me/yusufbuilds"
         }
     }
 }
