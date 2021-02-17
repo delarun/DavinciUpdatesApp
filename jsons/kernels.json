@@ -1,24 +1,22 @@
-{
-    "kernels": {
-        "0": {
-            "kernel_author": "Vantom",
-            "kernel_name": "Vantom Kernel",
-            "kernel_version": "VodkaRocks",
-            "kernel_image": "https://telegra.ph/file/b410179194a446b67082d.jpg",
-            "kernel_changelog_link": "https://telegra.ph/Vantom-Kernel-Changelog-2021-01-07-01-14",
-            "kernel_kernel_version": "4.14.214-rc1",
-            "build_date": "2021-01-07",
-            "download_link": "https://t.me/Vantomkernel/131"
-        },
-        "1": {
-            "kernel_author": "Daniel",
-            "kernel_name": "VantomBE Kernel",
-            "kernel_version": "PuzzlingFrillyHorseshoecrab",
-            "kernel_image": "https://telegra.ph/file/b410179194a446b67082d.jpg",
-            "kernel_changelog_link": "https://telegra.ph/VantomBE-Kernel-Changelog-2021-01-05-01-14",
-            "kernel_kernel_version": "4.14.213",
-            "build_date": "2021-01-05",
-            "download_link": "https://t.me/Vantomkernel/130"
-        }
+[
+    {
+        "author": "Vantom",
+        "name": "Vantom Kernel",
+        "version": "VodkaRocks",
+        "image": "https://telegra.ph/file/b410179194a446b67082d.jpg",
+        "changelog": "https://telegra.ph/Vantom-Kernel-Changelog-2021-01-07-01-14",
+        "kversion": "4.14.214-rc1",
+        "date": "2021-01-07",
+        "link": "https://t.me/Vantomkernel/131"
+    },
+    {
+        "author": "Daniel",
+        "name": "VantomBE Kernel",
+        "version": "PuzzlingFrillyHorseshoecrab",
+        "image": "https://telegra.ph/file/b410179194a446b67082d.jpg",
+        "changelog": "https://telegra.ph/VantomBE-Kernel-Changelog-2021-01-05-01-14",
+        "kversion": "4.14.213",
+        "date": "2021-01-05",
+        "link": "https://t.me/Vantomkernel/130"
     }
-}
+]

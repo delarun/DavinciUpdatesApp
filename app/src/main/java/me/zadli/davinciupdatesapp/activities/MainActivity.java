@@ -23,7 +23,6 @@ import org.json.JSONException;
 import java.util.HashMap;
 import java.util.Map;
 
-import me.zadli.davinciupdatesapp.BuildConfig;
 import me.zadli.davinciupdatesapp.R;
 import me.zadli.davinciupdatesapp.fragments.FirmwaresFragment;
 import me.zadli.davinciupdatesapp.fragments.KernelsFragment;

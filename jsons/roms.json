@@ -1,384 +1,717 @@
-{
-    "roms": {
-        "0": {
-            "author": "maade",
-            "rom_name": "Project 404",
-            "rom_image": "https://telegra.ph/file/b6fdbf9c0e382478bf5cd.png",
-            "android_version": "11.0",
-            "build_date": "2021-01-13",
-            "rom_version": "4.1",
-            "rom_codename": "Rippa",
-            "changelog_link": "https://telegra.ph/Project-404-9th-January-2021-Changelog-01-13",
-            "official": false,
-            "download_link": "https://drive.google.com/file/d/1FPp7B9mHoH__CyclShD2k96QTtF5MnHk/view",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/maade69",
-            "tg_group": "https://t.me/p404davinci"
+[
+    {
+        "authors": [
+            "maade"
+        ],
+        "information": {
+            "name": "Project 404",
+            "image": "https://telegra.ph/file/b6fdbf9c0e382478bf5cd.png",
+            "date": "2021-01-13",
+            "version": "4.1",
+            "android": "11.0",
+            "codename": "Rippa",
+            "changelog": "https://telegra.ph/Project-404-9th-January-2021-Changelog-01-13",
+            "official": false
         },
-        "1": {
-            "author": "Adi",
-            "rom_name": "DerpFest",
-            "rom_image": "https://telegra.ph/file/6d3b90ece92df549ff8e2.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-12",
-            "rom_version": "-",
-            "rom_codename": "-",
-            "changelog_link": "https://telegra.ph/DerpFest-12-01-2021-01-12",
-            "official": true,
-            "download_link": "https://sourceforge.net/projects/derpfest/files/davinci/DerpFest-11-Official-Alpha-davinci-20210112.zip/download",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/adi20_01",
-            "tg_group": "https://t.me/adidavinci1"
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://drive.google.com/file/d/1FPp7B9mHoH__CyclShD2k96QTtF5MnHk/view",
+            "vanilla": "-"
         },
-        "2": {
-            "author": "Arian",
-            "rom_name": "LineageOS",
-            "rom_image": "https://telegra.ph/file/0f63b376be138d648cb2f.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-17",
-            "rom_version": "18.1",
-            "rom_codename": "-",
-            "changelog_link": "https://raw.githubusercontent.com/arian-ota/changelog/lineage-18.1/davinci.txt",
-            "official": false,
-            "download_link": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-18.1/lineage-18.1-20201229-UNOFFICIAL-GMS-davinci.zip",
-            "download_vanilla_link": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-18.1/lineage-18.1-20210110-UNOFFICIAL-davinci.zip",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/ArianK16a",
-            "tg_group": "https://t.me/StarWarsFlowers"
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-"
         },
-        "3": {
-            "author": "spkal01",
-            "rom_name": "AICP",
-            "rom_image": "https://telegra.ph/file/2fb64dac319d081f289aa.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-15",
-            "rom_version": "-",
-            "rom_codename": "-",
-            "changelog_link": "http://files.spkal01.tech/Aicp/latest/Changelog.txt",
-            "official": false,
-            "download_link": "http://files.spkal01.tech/Aicp/latest/",
-            "download_vanilla_link": "http://files.spkal01.tech/Aicp/latest/",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "https://paypal.me/spkal01",
-            "donate_buymeacoffee_link": "https://buymeacoffee.com/spkal01",
-            "tg_author": "https://t.me/spkal",
-            "tg_group": "https://t.me/spkal01hub"
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
         },
-        "4": {
-            "author": "Arian",
-            "rom_name": "LineageOS",
-            "rom_image": "https://telegra.ph/file/0f63b376be138d648cb2f.jpg",
-            "android_version": "10.0",
-            "build_date": "2021-01-17",
-            "rom_version": "17.1",
-            "rom_codename": "-",
-            "changelog_link": "https://raw.githubusercontent.com/arian-ota/changelog/lineage-17.1/davinci.txt",
-            "official": false,
-            "download_link": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-17.1/lineage-17.1-20210117-UNOFFICIAL-GMS-davinci.zip/download",
-            "download_vanilla_link": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-17.1/lineage-17.1-20210117-UNOFFICIAL-davinci.zip/download",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/ArianK16a",
-            "tg_group": "https://t.me/StarWarsFlowers"
+        "telegram": {
+            "authors": [
+                "https://t.me/maade69"
+            ],
+            "group": "https://t.me/p404davinci"
+        }
+    },
+    {
+        "authors": [
+            "Adi"
+        ],
+        "information": {
+            "name": "DerpFest",
+            "image": "https://telegra.ph/file/6d3b90ece92df549ff8e2.jpg",
+            "date": "2021-01-12",
+            "version": "-",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://telegra.ph/DerpFest-12-01-2021-01-12",
+            "official": true
         },
-        "5": {
-            "author": "Marco",
-            "rom_name": "AOSP Extended",
-            "rom_image": "https://telegra.ph/file/4a7f391046a753cf31b0b.png",
-            "android_version": "11.0",
-            "build_date": "2021-01-13",
-            "rom_version": "-",
-            "rom_codename": "-",
-            "changelog_link": "https://telegra.ph/AOSPExtended-Davinci-Changelog-01-13",
-            "official": false,
-            "download_link": "https://sourceforge.net/projects/aex-davinci-unofficial/files/Gapps/AospExtended-v8.0-davinci-UNOFFICIAL_GAPPS-20210113-1524.zip/download",
-            "download_vanilla_link": "https://sourceforge.net/projects/aex-davinci-unofficial/files/Vanilla/AospExtended-v8.0-davinci-UNOFFICIAL-20210113-1510.zip/download",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "https://paypal.me/marcor00",
-            "donate_buymeacoffee_link": "https://buymeacoffee.com/hack64",
-            "tg_author": "https://t.me/Marco03",
-            "tg_group": "https://t.me/dotosdavinci"
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/derpfest/files/davinci/DerpFest-11-Official-Alpha-davinci-20210112.zip/download",
+            "vanilla": "-",
+            "link": "-"
         },
-        "6": {
-            "author": "Daniel",
-            "rom_name": "ArrowOS",
-            "rom_image": "https://telegra.ph/file/acdb8779781e66525b583.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-17",
-            "rom_version": "-",
-            "rom_codename": "-",
-            "changelog_link": "https://arrowos.net/changelog.php",
-            "official": true,
-            "download_link": "http://downloads.arrowos.net/davinci",
-            "download_vanilla_link": "http://downloads.arrowos.net/davinci",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "https://paypal.me/danielml",
-            "donate_buymeacoffee_link": "https://www.buymeacoffee.com/danielml3",
-            "tg_author": "https://t.me/daniml3",
-            "tg_group": "https://t.me/arrowdavinci"
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
         },
-        "7": {
-            "author": "Zadli",
-            "rom_name": "Fluid",
-            "rom_image": "https://telegra.ph/file/4e6cd497df263bd1b3aad.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-07",
-            "rom_version": "1.1",
-            "rom_codename": "Rum",
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/adi20_01"
+            ],
+            "group": "https://t.me/adidavinci1"
+        }
+    },
+    {
+        "authors": [
+            "Arian"
+        ],
+        "information": {
+            "name": "LineageOS",
+            "image": "https://telegra.ph/file/0f63b376be138d648cb2f.jpg",
+            "date": "2021-01-17",
+            "version": "18.1",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://raw.githubusercontent.com/arian-ota/changelog/lineage-18.1/davinci.txt",
+            "official": false
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-18.1/lineage-18.1-20201229-UNOFFICIAL-GMS-davinci.zip",
+            "vanilla": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-18.1/lineage-18.1-20210110-UNOFFICIAL-davinci.zip",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/ArianK16a"
+            ],
+            "group": "https://t.me/StarWarsFlowers"
+        }
+    },
+    {
+        "authors": [
+            "spkal01"
+        ],
+        "information": {
+            "name": "AICP",
+            "image": "https://telegra.ph/file/2fb64dac319d081f289aa.jpg",
+            "android": "11.0",
+            "date": "2021-01-15",
+            "version": "-",
+            "codename": "-",
+            "changelog": "http://files.spkal01.tech/Aicp/latest/Changelog.txt",
+            "official": false
+        },
+        "downloads": {
+            "gapps": "http://files.spkal01.tech/Aicp/latest/",
+            "vanilla": "http://files.spkal01.tech/Aicp/latest/",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "https://paypal.me/spkal01",
+            "buymeacoffee": "https://buymeacoffee.com/spkal01"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/spkal"
+            ],
+            "group": "https://t.me/spkal01hub"
+        }
+    },
+    {
+        "authors": [
+            "Arian"
+        ],
+        "information": {
+            "name": "LineageOS",
+            "image": "https://telegra.ph/file/0f63b376be138d648cb2f.jpg",
+            "android": "10.0",
+            "date": "2021-01-17",
+            "version": "17.1",
+            "codename": "-",
+            "changelog": "https://raw.githubusercontent.com/arian-ota/changelog/lineage-17.1/davinci.txt",
+            "official": false
+        },
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-17.1/lineage-17.1-20210117-UNOFFICIAL-GMS-davinci.zip/download",
+            "vanilla": "https://sourceforge.net/projects/ephedraceae/files/davinci/lineage-17.1/lineage-17.1-20210117-UNOFFICIAL-davinci.zip/download",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/ArianK16a"
+            ],
+            "group": "https://t.me/StarWarsFlowers"
+        }
+    },
+    {
+        "authors": [
+            "Marco"
+        ],
+        "information": {
+            "name": "AOSP Extended",
+            "image": "https://telegra.ph/file/4a7f391046a753cf31b0b.png",
+            "android": "11.0",
+            "date": "2021-01-13",
+            "version": "-",
+            "codename": "-",
+            "changelog": "https://telegra.ph/AOSPExtended-Davinci-Changelog-01-13",
+            "official": false
+        },
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/aex-davinci-unofficial/files/Gapps/AospExtended-v8.0-davinci-UNOFFICIAL_GAPPS-20210113-1524.zip/download",
+            "vanilla": "https://sourceforge.net/projects/aex-davinci-unofficial/files/Vanilla/AospExtended-v8.0-davinci-UNOFFICIAL-20210113-1510.zip/download",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "https://paypal.me/marcor00",
+            "buymeacoffee": "https://buymeacoffee.com/hack64"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/Marco03"
+            ],
+            "group": "https://t.me/dotosdavinci"
+        }
+    },
+    {
+        "authors": [
+            "Daniel"
+        ],
+        "information": {
+            "name": "ArrowOS",
+            "image": "https://telegra.ph/file/acdb8779781e66525b583.jpg",
+            "android": "11.0",
+            "date": "2021-01-17",
+            "version": "-",
+            "codename": "-",
+            "changelog": "https://arrowos.net/changelog.php",
+            "official": true
+        },
+        "downloads": {
+            "gapps": "http://downloads.arrowos.net/davinci",
+            "vanilla": "http://downloads.arrowos.net/davinci",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "https://paypal.me/danielml",
+            "buymeacoffee": "https://www.buymeacoffee.com/danielml3"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/daniml3"
+            ],
+            "group": "https://t.me/arrowdavinci"
+        }
+    },
+    {
+        "author": [
+            "Zadli"
+        ],
+        "information": {
+            "name": "Fluid",
+            "image": "https://telegra.ph/file/4e6cd497df263bd1b3aad.jpg",
+            "android": "11.0",
+            "date": "2021-01-07",
+            "version": "1.1",
+            "codename": "Rum",
             "changelog_link": "https://t.me/Zadli_Building_Hub/7760",
-            "official": true,
-            "download_link": "https://sourceforge.net/projects/project-fluid/files/davinci/eleven/gapped/Fluid-1.1-Rum-OFFICIAL-davinci-20210107-gapped.zip/download",
-            "download_vanilla_link": "-",
-            "mirror_link": "https://drive.google.com/file/d/1f9S5POSEiSv1KOUAIPlFjlqzUKHntcWi/view?usp=sharing",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/ZadliM",
-            "tg_group": "https://t.me/fluid_davinci"
+            "official": true
         },
-        "8": {
-            "author": "ArixElo",
-            "rom_name": "ShapeShiftOS",
-            "rom_image": "https://telegra.ph/file/832dc0e909848520af7ac.png",
-            "android_version": "11.0",
-            "build_date": "2021-01-31",
-            "rom_version": "2.2",
-            "rom_codename": "Marshtomp",
-            "changelog_link": "https://telegra.ph/ShapeShiftOS-Changelog-01-31",
-            "official": true,
-            "download_link": "http://arix.postaw.se/davinci/shapeshift/ShapeShiftOS-2.2-Marshtomp-OFFICIAL-ssos_davinci-20210131-1452.zip",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "https://paypal.me/ArixEloZwei",
-            "donate_buymeacoffee_link": "https://www.buymeacoffee.com/ArixElo",
-            "tg_author": "https://t.me/ArixElo",
-            "tg_group": "https://t.me/arixelogroup"
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/project-fluid/files/davinci/eleven/gapped/Fluid-1.1-Rum-OFFICIAL-davinci-20210107-gapped.zip/download",
+            "vanilla": "-",
+            "link": "-"
         },
-        "9": {
-            "author": "Vladimir S",
-            "rom_name": "MSM Xtended",
-            "rom_image": "https://telegra.ph/file/a4c74106a21e5e89cefd6.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-12",
-            "rom_version": "4.0",
-            "rom_codename": "XR",
-            "changelog_link": "https://raw.githubusercontent.com/Xtended-Devices/DevicesChangelog/xq/davinci.txt",
-            "official": true,
-            "download_link": "-",
-            "download_vanilla_link": "https://downloads.msmxtended.org/davinci/Xtended-XR-v4.0-davinci-OFFICIAL-20210112.zip",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/SVB_22",
-            "tg_group": "https://t.me/msmxtended_davinci"
+        "mirrors": {
+            "gapps": "https://drive.google.com/file/d/1f9S5POSEiSv1KOUAIPlFjlqzUKHntcWi/view?usp=sharing",
+            "vanilla": "-",
+            "link": "-"
         },
-        "10": {
-            "author": "mgowda",
-            "rom_name": "SuperiorOS",
-            "rom_image": "https://telegra.ph/file/345b4528530ec6ae1c343.png",
-            "android_version": "11.0",
-            "build_date": "2021-01-12",
-            "rom_version": "-",
-            "rom_codename": "Xcalibur",
-            "changelog_link": "https://t.me/redmik20updates/887",
-            "official": false,
-            "download_link": "-",
-            "download_vanilla_link": "https://drive.google.com/file/d/1Bu_6mxPA3j5FviH-Wv_j4hy-Oi23LVAP/view?usp=drivesdk",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/mgowda",
-            "tg_group": "https://t.me/redmik20updates"
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
         },
-        "11": {
-            "author": "spkal01",
-            "rom_name": "Octavi-OS",
-            "rom_image": "https://telegra.ph/file/863b90e42cc932f810f1a.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-15",
-            "rom_version": "1.5",
-            "rom_codename": "-",
-            "changelog_link": "https://t.me/spkal01hub/4800",
-            "official": true,
-            "download_link": "https://www.pling.com/p/1469902/",
-            "download_vanilla_link": "https://www.pling.com/p/1469902/",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "https://paypal.me/spkal01",
-            "donate_buymeacoffee_link": "https://buymeacoffee.com/spkal01",
-            "tg_author": "https://t.me/spkal",
-            "tg_group": "https://t.me/spkal01hub"
+        "telegram": {
+            "authors": [
+                "https://t.me/ZadliM"
+            ],
+            "group": "https://t.me/fluid_davinci"
+        }
+    },
+    {
+        "authors": [
+            "ArixElo"
+        ],
+        "information": {
+            "name": "ShapeShiftOS",
+            "image": "https://telegra.ph/file/832dc0e909848520af7ac.png",
+            "date": "2021-01-31",
+            "version": "2.2",
+            "android": "11.0",
+            "codename": "Marshtomp",
+            "changelog": "https://telegra.ph/ShapeShiftOS-Changelog-01-31",
+            "official": true
         },
-        "12": {
-            "author": "Laker87",
-            "rom_name": "crDroid",
-            "rom_image": "https://telegra.ph/file/67af84038cc9272c936d3.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-11",
-            "rom_version": "7.2",
-            "rom_codename": "-",
-            "changelog_link": "https://t.me/ionosdavinci/8865",
-            "official": true,
-            "download_link": "https://crdroid.net/davinci",
-            "download_vanilla_link": "https://drive.google.com/file/d/1CzpX4P0CYHQKDPWHZyQHKHnE56M_9zQ3/view?usp=sharing",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "https://paypal.me/lakerman1987",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/Laker87",
-            "tg_group": "https://t.me/ionosdavinci"
+        "screenshots": [],
+        "downloads": {
+            "gapps": "http://arix.postaw.se/davinci/shapeshift/ShapeShiftOS-2.2-Marshtomp-OFFICIAL-ssos_davinci-20210131-1452.zip",
+            "vanilla": "-",
+            "link": "-"
         },
-        "13": {
-            "author": "Adarsh",
-            "rom_name": "StatixOS",
-            "rom_image": "https://telegra.ph/file/7612e0280849fb5354df0.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-08",
-            "rom_version": "4.1",
-            "rom_codename": "-",
-            "changelog_link": "https://del.dog/statix4-changelog.txt",
-            "official": true,
-            "download_link": "https://sourceforge.net/projects/statixos/files/11/davinci/",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "http://paypal.me/adarshgrewal",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/grewal",
-            "tg_group": "https://t.me/randomdavinci"
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
         },
-        "14": {
-            "author": "Noobieta",
-            "rom_name": "YAAP",
-            "rom_image": "https://telegra.ph/file/8ace5d72c98a0043f44c2.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-15",
-            "rom_version": "-",
-            "rom_codename": "-",
-            "changelog_link": "https://telegra.ph/YAAP-Changelog-2021-01-15-01-15",
-            "official": false,
-            "download_link": "-",
-            "download_vanilla_link": "https://drive.google.com/file/d/1-8E48kvvWvJAGFODQz3bDQC07iAsaTdP/view?usp=drivesdk",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/noobvansh",
-            "tg_group": "http://t.me/revengemi9t"
+        "donations": {
+            "paypal": "https://paypal.me/ArixEloZwei",
+            "buymeacoffee": "https://www.buymeacoffee.com/ArixElo"
         },
-        "15": {
-            "author": "Louis1977",
-            "rom_name": "CherishOS",
-            "rom_image": "https://telegra.ph/file/d1268f686a59de6483dda.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-16",
-            "rom_version": "2.1.5",
-            "rom_codename": "-",
-            "changelog_link": "https://t.me/cherishosdavinci/2563",
-            "official": true,
-            "download_link": "https://drive.google.com/file/d/1ziXNiWJlIa6JeMnBIyQNBY5zHVZhMyMQ/view?usp=sharing",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://t.me/Louis1977",
-            "tg_group": "https://t.me/cherishosdavinci"
+        "telegram": {
+            "authors": [
+                "https://t.me/ArixElo"
+            ],
+            "group": "https://t.me/arixelogroup"
+        }
+    },
+    {
+        "authors": [
+            "Vladimir S"
+        ],
+        "information": {
+            "name": "MSM Xtended",
+            "image": "https://telegra.ph/file/a4c74106a21e5e89cefd6.jpg",
+            "date": "2021-01-12",
+            "version": "4.0",
+            "android": "11.0",
+            "codename": "XR",
+            "changelog": "https://raw.githubusercontent.com/Xtended-Devices/DevicesChangelog/xq/davinci.txt",
+            "official": true
         },
-        "16": {
-            "author": "Adarsh and Yusuf",
-            "rom_name": "PixelishExperience",
-            "rom_image": "https://telegra.ph/file/5efec2980239e9c78f57d.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-16",
-            "rom_version": "-",
-            "rom_codename": "-",
-            "changelog_link": "https://telegra.ph/Pixel-ish-16012020-update-01-16",
-            "official": true,
-            "download_link": "http://bit.ly/2LEhL9Z",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://telegra.ph/PixelishExperience-Authors-01-17",
-            "tg_group": "https://t.me/yusufbuilds"
+        "screenshots": [],
+        "downloads": {
+            "gapps": "-",
+            "vanilla": "https://downloads.msmxtended.org/davinci/Xtended-XR-v4.0-davinci-OFFICIAL-20210112.zip",
+            "link": "-"
         },
-        "17": {
-            "author": "Vladimir S",
-            "rom_name": "SyberiaOS",
-            "rom_image": "https://telegra.ph/file/a03546ab7efcde6870acb.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-16",
-            "rom_version": "4.2",
-            "rom_codename": "-",
-            "changelog_link": "https://telegra.ph/SyberiaOS-Changelog2020-01-16-01-17",
-            "official": true,
-            "download_link": "https://sourceforge.net/projects/syberiaos/files/davinci/syberia_davinci-v4.2-20210116-0500-OFFICIAL.zip/download",
-            "download_vanilla_link": "https://sourceforge.net/projects/syberiaos/files/davinci/syberia_davinci-v4.2-20210116-0500-OFFICIAL.zip/download",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://telegra.ph/SVB_22",
-            "tg_group": "http://t.me/syberiadavinci"
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
         },
-        "18": {
-            "author": "Valentin",
-            "rom_name": "PixelExperience",
-            "rom_image": "https://telegra.ph/file/169c99f0496f1d0dd4c20.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-17",
-            "rom_version": "-",
-            "rom_codename": "-",
-            "changelog_link": "https://telegra.ph/PixelExperience-ChangeLog2020-01-17-01-17",
-            "official": false,
-            "download_link": "https://bit.ly/2M2AThB",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "-",
-            "tg_author": "https://telegra.ph/Valentinso24",
-            "tg_group": "https://t.me/PixelExperianceMi9t"
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
         },
-        "19": {
-            "author": "Yusuf",
-            "rom_name": "Paranoid Android",
-            "rom_image": "https://telegra.ph/file/e127887c5b0a587c9de19.jpg",
-            "android_version": "11.0",
-            "build_date": "2021-01-17",
-            "rom_version": "1",
-            "rom_codename": "Ruby",
-            "changelog_link": "https://telegra.ph/Paranoid-Android-Ruby-1-Davinci-2021-01-17-Changelog-01-17-2",
-            "official": false,
-            "download_link": "https://drive.google.com/file/d/1ZBgai46SDDKhgh_x57nF__aidhD-L_df/view?usp=sharing",
-            "download_vanilla_link": "-",
-            "mirror_link": "-",
-            "mirror_vanilla_link": "-",
-            "donate_paypal_link": "-",
-            "donate_buymeacoffee_link": "http://buymeacoffee.com/yusufbuilds",
-            "tg_author": "https://telegra.ph/Noonlord",
-            "tg_group": "https://t.me/aospadavinci"
+        "telegram": {
+            "authors": [
+                "https://t.me/SVB_22"
+            ],
+            "group": "https://t.me/msmxtended_davinci"
+        }
+    },
+    {
+        "authors": [
+            "mgowda"
+        ],
+        "information": {
+            "name": "SuperiorOS",
+            "image": "https://telegra.ph/file/345b4528530ec6ae1c343.png",
+            "date": "2021-01-12",
+            "version": "-",
+            "android": "11.0",
+            "codename": "Xcalibur",
+            "changelog": "https://t.me/redmik20updates/887",
+            "official": false
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "-",
+            "vanilla": "https://drive.google.com/file/d/1Bu_6mxPA3j5FviH-Wv_j4hy-Oi23LVAP/view?usp=drivesdk",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/mgowda"
+            ],
+            "group": "https://t.me/redmik20updates"
+        }
+    },
+    {
+        "authors": [
+            "spkal01"
+        ],
+        "information": {
+            "name": "Octavi-OS",
+            "image": "https://telegra.ph/file/863b90e42cc932f810f1a.jpg",
+            "date": "2021-01-15",
+            "version": "1.5",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://t.me/spkal01hub/4800",
+            "official": true
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://www.pling.com/p/1469902/",
+            "vanilla": "https://www.pling.com/p/1469902/",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "https://paypal.me/spkal01",
+            "buymeacoffee": "https://buymeacoffee.com/spkal01"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/spkal"
+            ],
+            "group": "https://t.me/spkal01hub"
+        }
+    },
+    {
+        "authors": [
+            "Laker87"
+        ],
+        "information": {
+            "name": "crDroid",
+            "image": "https://telegra.ph/file/67af84038cc9272c936d3.jpg",
+            "date": "2021-01-11",
+            "version": "7.2",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://t.me/ionosdavinci/8865",
+            "official": true
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://crdroid.net/davinci",
+            "vanilla": "https://drive.google.com/file/d/1CzpX4P0CYHQKDPWHZyQHKHnE56M_9zQ3/view?usp=sharing",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "https://paypal.me/lakerman1987",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/Laker87"
+            ],
+            "group": "https://t.me/ionosdavinci"
+        }
+    },
+    {
+        "authors": [
+            "Adarsh"
+        ],
+        "information": {
+            "name": "StatixOS",
+            "image": "https://telegra.ph/file/7612e0280849fb5354df0.jpg",
+            "date": "2021-01-08",
+            "version": "4.1",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://del.dog/statix4-changelog.txt",
+            "official": true
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/statixos/files/11/davinci/",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "http://paypal.me/adarshgrewal",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/grewal"
+            ],
+            "group": "https://t.me/randomdavinci"
+        }
+    },
+    {
+        "authors": [
+            "Noobieta"
+        ],
+        "information": {
+            "name": "YAAP",
+            "image": "https://telegra.ph/file/8ace5d72c98a0043f44c2.jpg",
+            "date": "2021-01-15",
+            "version": "-",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://telegra.ph/YAAP-Changelog-2021-01-15-01-15",
+            "official": false
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "-",
+            "vanilla": "https://drive.google.com/file/d/1-8E48kvvWvJAGFODQz3bDQC07iAsaTdP/view?usp=drivesdk",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/noobvansh"
+            ],
+            "group": "http://t.me/revengemi9t"
+        }
+    },
+    {
+        "authors": [
+            "Louis1977"
+        ],
+        "information": {
+            "name": "CherishOS",
+            "image": "https://telegra.ph/file/d1268f686a59de6483dda.jpg",
+            "date": "2021-01-16",
+            "version": "2.1.5",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://t.me/cherishosdavinci/2563",
+            "official": true
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://drive.google.com/file/d/1ziXNiWJlIa6JeMnBIyQNBY5zHVZhMyMQ/view?usp=sharing",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/Louis1977"
+            ],
+            "group": "https://t.me/cherishosdavinci"
+        }
+    },
+    {
+        "authors": [
+            "Adarsh",
+            "Yusuf"
+        ],
+        "information": {
+            "name": "PixelishExperience",
+            "image": "https://telegra.ph/file/5efec2980239e9c78f57d.jpg",
+            "date": "2021-01-16",
+            "version": "-",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://telegra.ph/Pixel-ish-16012020-update-01-16",
+            "official": true
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "http://bit.ly/2LEhL9Z",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/grewal",
+                "https://t.me/Noonlord"
+            ],
+            "group": "https://t.me/yusufbuilds"
+        }
+    },
+    {
+        "authors": [
+            "Vladimir S"
+        ],
+        "information": {
+            "name": "SyberiaOS",
+            "image": "https://telegra.ph/file/a03546ab7efcde6870acb.jpg",
+            "date": "2021-01-16",
+            "version": "4.2",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://telegra.ph/SyberiaOS-Changelog2020-01-16-01-17",
+            "official": true
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/syberiaos/files/davinci/syberia_davinci-v4.2-20210116-0500-OFFICIAL.zip/download",
+            "vanilla": "https://sourceforge.net/projects/syberiaos/files/davinci/syberia_davinci-v4.2-20210116-0500-OFFICIAL.zip/download",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://telegra.ph/SVB_22"
+            ],
+            "group": "http://t.me/syberiadavinci"
+        }
+    },
+    {
+        "authors": [
+            "Valentin"
+        ],
+        "information": {
+            "name": "PixelExperience",
+            "image": "https://telegra.ph/file/169c99f0496f1d0dd4c20.jpg",
+            "date": "2021-01-17",
+            "version": "-",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://telegra.ph/PixelExperience-ChangeLog2020-01-17-01-17",
+            "official": false
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://bit.ly/2M2AThB",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://telegra.ph/Valentinso24"
+            ],
+            "group": "https://t.me/PixelExperianceMi9t"
+        }
+    },
+    {
+        "authors": [
+            "Yusuf"
+        ],
+        "information": {
+            "name": "Paranoid Android",
+            "image": "https://telegra.ph/file/e127887c5b0a587c9de19.jpg",
+            "date": "2021-01-17",
+            "version": "1",
+            "android": "11.0",
+            "codename": "Ruby",
+            "changelog": "https://telegra.ph/Paranoid-Android-Ruby-1-Davinci-2021-01-17-Changelog-01-17-2",
+            "official": false
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://drive.google.com/file/d/1ZBgai46SDDKhgh_x57nF__aidhD-L_df/view?usp=sharing",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "http://buymeacoffee.com/yusufbuilds"
+        },
+        "telegram": {
+            "authors": [
+                "https://telegra.ph/Noonlord"
+            ],
+            "group": "https://t.me/aospadavinci"
         }
     }
-}
+]

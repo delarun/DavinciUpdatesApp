@@ -1,25 +1,60 @@
-{
-    "recoveries":{
-        "0": {
-            "name": "OrangeFox Recovery",
-            "version": "R11.0",
-            "image": "https://telegra.ph/file/514613f933e0545fab5ba.jpg",
-            "upload_date": "2021-01-09",
-            "download_link": "https://cloud.zadli.me/index.php/s/aiqGgrf4xzRR2yE"
+[
+    {
+        "authors": [
+            "maade"
+        ],
+        "information": {
+            "name": "Project 404",
+            "image": "https://telegra.ph/file/b6fdbf9c0e382478bf5cd.png",
+            "date": "2021-01-13",
+            "version": "4.1",
+            "android": "11.0",
+            "codename": "Rippa",
+            "changelog": "https://telegra.ph/Project-404-9th-January-2021-Changelog-01-13",
+            "official": false
         },
-        "1": {
-            "name": "TWRP Recovery",
-            "version": "3.5.0_9",
-            "image": "https://telegra.ph/file/a4b92c2f39f5da88030d2.jpg",
-            "upload_date": "2021-01-09",
-            "download_link": "https://eu.dl.twrp.me/davinci/twrp-3.5.0_9-0-davinci.img.html"
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://drive.google.com/file/d/1FPp7B9mHoH__CyclShD2k96QTtF5MnHk/view",
+            "vanilla": "-",
+            "link": "-"
         },
-        "2": {
-            "name": "SHRP Recovery",
-            "version": "3.0",
-            "image": "https://telegra.ph/file/8e05dacd077f882a962da.jpg",
-            "upload_date": "2021-01-15",
-            "download_link": "https://sourceforge.net/projects/shrp/files/davinci/SHRP_v3.0_stable-Official_davinci-101013012021.zip/download"
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "-"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/maade69"
+            ],
+            "group": "https://t.me/p404davinci"
         }
+    },
+    
+    {
+        "name": "OrangeFox Recovery",
+        "version": "R11.0",
+        "image": "https://telegra.ph/file/514613f933e0545fab5ba.jpg",
+        "date": "2021-01-09",
+        "link": "https://cloud.zadli.me/index.php/s/aiqGgrf4xzRR2yE"
+    },
+    {
+        "name": "TWRP Recovery",
+        "version": "3.5.0_9",
+        "image": "https://telegra.ph/file/a4b92c2f39f5da88030d2.jpg",
+        "date": "2021-01-09",
+        "link": "https://eu.dl.twrp.me/davinci/twrp-3.5.0_9-0-davinci.img.html"
+    },
+    {
+        "name": "SHRP Recovery",
+        "version": "3.0",
+        "image": "https://telegra.ph/file/8e05dacd077f882a962da.jpg",
+        "date": "2021-01-15",
+        "link": "https://sourceforge.net/projects/shrp/files/davinci/SHRP_v3.0_stable-Official_davinci-101013012021.zip/download"
     }
-}
+]
