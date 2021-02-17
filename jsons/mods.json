@@ -1,18 +1,16 @@
-{
-    "mods":{
-        "0": {
-            "name": "Disable ForceEncrypt",
-            "version": "-",
-            "image": "-",
-            "upload_date": "2020-02-11",
-            "download_link": "https://cloud.zadli.me/index.php/s/K8CWffzcZecsFzY"
-        },
-        "1": {
-            "name": "Magisk",
-            "version": "v21.4",
-            "image": "https://telegra.ph/file/48fd84349d84de913c340.jpg",
-            "upload_date": "2021-01-17",
-            "download_link": "https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-v21.4.zip"
-        }
+[
+    {
+        "name": "Disable ForceEncrypt",
+        "version": "-",
+        "image": "-",
+        "date": "2020-02-11",
+        "link": "https://cloud.zadli.me/index.php/s/K8CWffzcZecsFzY"
+    },
+    {
+        "name": "Magisk",
+        "version": "v21.4",
+        "image": "https://telegra.ph/file/48fd84349d84de913c340.jpg",
+        "date": "2021-01-17",
+        "link": "https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-v21.4.zip"
     }
-}
+]
