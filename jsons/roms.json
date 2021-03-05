@@ -713,5 +713,41 @@
             ],
             "group": "https://t.me/aospadavinci"
         }
+    },
+    {
+        "authors": [
+            "MR.ROBOT.MK"
+        ],
+        "information": {
+            "name": "NezukoOS",
+            "image": "https://telegra.ph/file/d52858e994cec0d25f172.jpg",
+            "date": "2021-03-04",
+            "version": "1.1",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://telegra.ph/NezukoOS---Davinci---Features-03-03",
+            "official": true
+        },
+        "screenshots": [],
+        "downloads": {
+            "gapps": "https://sourceforge.net/projects/nezukoos/files/davinci/NEZUKO_davinci-11.0-20210304-0823-STABLE-OFFICIAL.zip/download",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "mirrors": {
+            "gapps": "https://drive.google.com/file/d/1-2pxHFoQMyl-7w7XcTM2fTrlET4_hC3t/view?usp=drivesdk",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "-",
+            "buymeacoffee": "_"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/SILENT_KILLER404"
+            ],
+            "group": "https://t.me/pharaohdavinci"
+        }
     }
 ]
