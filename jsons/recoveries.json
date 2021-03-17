@@ -56,5 +56,12 @@
         "image": "https://telegra.ph/file/8e05dacd077f882a962da.jpg",
         "date": "2021-01-15",
         "link": "https://sourceforge.net/projects/shrp/files/davinci/SHRP_v3.0_stable-Official_davinci-101013012021.zip/download"
+    },
+    {
+        "name": "PitchBlack Recovery",
+        "version": "3.0.0",
+        "image": "https://telegra.ph/file/ef44f60a8f1d42fc2d139.jpg",
+        "date": "2021-03-07",
+        "link": "https://sourceforge.net/projects/mrrobotbuilds/files/PBRP-davinci-3.0.0-20210307-1416-UNOFFICIAL.zip/download"
     }
 ]
