@@ -749,5 +749,42 @@
             ],
             "group": "https://t.me/pharaohdavinci"
         }
+    },
+    {
+        "authors": [
+            "MR.ROBOT.MK"
+        ],
+        "information": {
+            "name": "PalladiumOS",
+            "image": "https://telegra.ph/file/435748f9f8f6db004518f.jpg",
+            "date": "2021-04-01",
+            "version": "1.1",
+            "android": "11.0",
+            "codename": "-",
+            "changelog": "https://blog.palladiumos.me/2021-03-25/Palladium-OS",
+            "official": true
+        },
+        "screenshots": "https://telegra.ph/PALLADIUM-OS---SCREENSHOTS-03-29",
+        "downloads": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "https://download.palladiumos.me/?dir=davinci"
+        },
+        "mirrors": {
+            "gapps": "-",
+            "vanilla": "-",
+            "link": "-"
+        },
+        "donations": {
+            "paypal": "http://paypal.me/mrrobotmk",
+            "buymeacoffee": "https://www.buymeacoffee.com/MR.ROBOT.MK"
+        },
+        "telegram": {
+            "authors": [
+                "https://t.me/SILENT_KILLER404"
+            ],
+            "group": "https://t.me/palladium_davinci"
+        }
     }
+   
 ]
