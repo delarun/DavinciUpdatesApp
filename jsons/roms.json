@@ -720,28 +720,28 @@
         ],
         "information": {
             "name": "NezukoOS",
-            "image": "https://telegra.ph/file/d52858e994cec0d25f172.jpg",
-            "date": "2021-03-04",
-            "version": "1.1",
+            "image": "https://telegra.ph/file/465da5b5a70b256d9c7c8.jpg",
+            "date": "2021-04-13",
+            "version": "1.2",
             "android": "11.0",
-            "codename": "-",
-            "changelog": "https://telegra.ph/NezukoOS---Davinci---Features-03-03",
+            "codename": "AVICII",
+            "changelog": "https://t.me/NezukoOSUpdates/168",
             "official": true
         },
-        "screenshots": [],
+        "screenshots": "https://t.me/NezukoOSUpdates/189?single",
         "downloads": {
-            "gapps": "https://sourceforge.net/projects/nezukoos/files/davinci/NEZUKO_davinci-11.0-20210304-0823-STABLE-OFFICIAL.zip/download",
+            "gapps": "https://sourceforge.net/projects/nezukoos/files/davinci/NEZUKO_davinci-11.0-20210413-0838-STABLE-OFFICIAL.zip/download",
             "vanilla": "-",
             "link": "-"
         },
         "mirrors": {
-            "gapps": "https://drive.google.com/file/d/1-2pxHFoQMyl-7w7XcTM2fTrlET4_hC3t/view?usp=drivesdk",
+            "gapps": "-",
             "vanilla": "-",
             "link": "-"
         },
         "donations": {
-            "paypal": "-",
-            "buymeacoffee": "_"
+            "paypal": "http://paypal.me/mrrobotmk",
+            "buymeacoffee": "https://www.buymeacoffee.com/MR.ROBOT.MK"
         },
         "telegram": {
             "authors": [
